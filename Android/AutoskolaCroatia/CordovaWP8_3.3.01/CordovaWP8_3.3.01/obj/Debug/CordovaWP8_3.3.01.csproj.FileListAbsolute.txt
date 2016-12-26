@@ -1,0 +1,14 @@
+C:\Users\Ante\Desktop\AutoskolaCroatia\CordovaWP8_3.3.01\CordovaWP8_3.3.01\Bin\Debug\ApplicationIcon.png
+C:\Users\Ante\Desktop\AutoskolaCroatia\CordovaWP8_3.3.01\CordovaWP8_3.3.01\Bin\Debug\Background.png
+C:\Users\Ante\Desktop\AutoskolaCroatia\CordovaWP8_3.3.01\CordovaWP8_3.3.01\Bin\Debug\CordovaWP8_3.3.01.dll
+C:\Users\Ante\Desktop\AutoskolaCroatia\CordovaWP8_3.3.01\CordovaWP8_3.3.01\Bin\Debug\CordovaWP8_3.3.01.pdb
+C:\Users\Ante\Desktop\AutoskolaCroatia\CordovaWP8_3.3.01\CordovaWP8_3.3.01\Bin\Debug\AppManifest.xaml
+C:\Users\Ante\Desktop\AutoskolaCroatia\CordovaWP8_3.3.01\CordovaWP8_3.3.01\Bin\Debug\Properties\WMAppManifest.xml
+C:\Users\Ante\Desktop\AutoskolaCroatia\CordovaWP8_3.3.01\CordovaWP8_3.3.01\Bin\Debug\CordovaAppProj_Debug_AnyCPU.xap
+C:\Users\Ante\Desktop\AutoskolaCroatia\CordovaWP8_3.3.01\CordovaWP8_3.3.01\obj\Debug\App.g.cs
+C:\Users\Ante\Desktop\AutoskolaCroatia\CordovaWP8_3.3.01\CordovaWP8_3.3.01\obj\Debug\cordovalib\CordovaView.g.cs
+C:\Users\Ante\Desktop\AutoskolaCroatia\CordovaWP8_3.3.01\CordovaWP8_3.3.01\obj\Debug\MainPage.g.cs
+C:\Users\Ante\Desktop\AutoskolaCroatia\CordovaWP8_3.3.01\CordovaWP8_3.3.01\obj\Debug\CordovaWP8_3.3.01.g.resources
+C:\Users\Ante\Desktop\AutoskolaCroatia\CordovaWP8_3.3.01\CordovaWP8_3.3.01\obj\Debug\CordovaWP8_3.3.01.dll
+C:\Users\Ante\Desktop\AutoskolaCroatia\CordovaWP8_3.3.01\CordovaWP8_3.3.01\obj\Debug\CordovaWP8_3.3.01.pdb
+C:\Users\Ante\Desktop\AutoskolaCroatia\CordovaWP8_3.3.01\CordovaWP8_3.3.01\obj\Debug\XapCacheFile.xml

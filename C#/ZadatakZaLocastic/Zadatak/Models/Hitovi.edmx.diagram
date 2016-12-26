@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="59e20855782b49918d483669c5c04f57" Name="Diagram1" ShowGrid="true">
+        <AssociationConnector Association="HitoviModel.TablicaHitovaPlaylista" />
+        <AssociationConnector Association="HitoviModel.FK__Prijenosi__Idpla__208CD6FA" />
+        <EntityTypeShape EntityType="HitoviModel.Prijenosica" Width="1.5" PointX="5.25" PointY="0.625" />
+        <EntityTypeShape EntityType="HitoviModel.TablicaHitova" Width="1.5" PointX="2.75" PointY="0.75" />
+        <AssociationConnector Association="HitoviModel.FK__Prijenosica__Id__2B0A656D" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

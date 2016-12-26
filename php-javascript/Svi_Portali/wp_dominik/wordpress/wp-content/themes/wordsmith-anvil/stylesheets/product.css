@@ -1,0 +1,7 @@
+.product-title { background: url(../images/bg.jpg); padding: 10px 0 10px 32px; width: 670px; position: relative; left: 0px; color: #eee; text-shadow: 1px 1px 0 #666, 2px 2px 0 #666; margin: 20px 0 15px 0; }
+
+.product-info-box { position: relative; margin: 0 0 15px 0; }
+.product-info-box ul { position: absolute; background: rgba(102,102,0,.5); padding: 10px 10px 8px 10px; right: -40px; width: 160px; top: 100px; list-style: none; }
+.product-info-box ul li { margin: 0 0 10px 0; }
+.product-info-box ul li h5 { background: url(../images/bg.jpg); padding: 0 5px; color: #CA5BAE; margin: 0; }
+.product-description { width: 560px; }

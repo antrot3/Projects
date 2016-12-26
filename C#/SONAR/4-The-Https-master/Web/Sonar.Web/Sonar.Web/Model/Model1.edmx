@@ -1,0 +1,904 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="hackathon_shift_2016_testModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Comment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Text" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="PersonID" Type="int" Nullable="false" />
+          <Property Name="EventID" Type="int" Nullable="false" />
+          <Property Name="Date" Type="datetime2" Precision="7" />
+        </EntityType>
+        <EntityType Name="Event">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="StartDate" Type="datetime2" Precision="7" />
+          <Property Name="EndDate" Type="datetime2" Precision="7" />
+          <Property Name="Longitude" Type="real" />
+          <Property Name="Latitude" Type="real" />
+          <Property Name="AuthorID" Type="int" Nullable="false" />
+          <Property Name="TownID" Type="int" Nullable="false" />
+          <Property Name="StateID" Type="int" Nullable="false" />
+          <Property Name="ImageUrl" Type="nvarchar" MaxLength="150" />
+          <Property Name="Contact" Type="nvarchar" MaxLength="50" />
+          <Property Name="EventTypeID" Type="int" Nullable="false" />
+          <Property Name="Radius" Type="int" />
+        </EntityType>
+        <EntityType Name="EventPerson">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EventID" Type="int" Nullable="false" />
+          <Property Name="PersonID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EventState">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EventSubscription">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PersonID" Type="int" Nullable="false" />
+          <Property Name="EventTypeID" Type="int" Nullable="false" />
+          <Property Name="TownID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EventType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Person">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="BirthDate" Type="date" />
+          <Property Name="Username" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Rating" Type="int" Nullable="false" />
+          <Property Name="PersonTypeID" Type="int" Nullable="false" />
+          <Property Name="ImageUrl" Type="nvarchar" MaxLength="150" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PersonSubscription">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SubscriberID" Type="int" Nullable="false" />
+          <Property Name="PublisherID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PersonType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SotialNetwork">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PersonID" Type="int" Nullable="false" />
+          <Property Name="ProfileLink" Type="nvarchar" MaxLength="150" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Town">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="Comment_EventID_FK">
+          <End Role="Event" Type="Self.Event" Multiplicity="1" />
+          <End Role="Comment" Type="Self.Comment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Event">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Comment">
+              <PropertyRef Name="EventID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Comment_PersonID_FK">
+          <End Role="Person" Type="Self.Person" Multiplicity="1" />
+          <End Role="Comment" Type="Self.Comment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Comment">
+              <PropertyRef Name="PersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Event_AuthorID_FK">
+          <End Role="Person" Type="Self.Person" Multiplicity="1" />
+          <End Role="Event" Type="Self.Event" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Event">
+              <PropertyRef Name="AuthorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Event_EventTypeID_FK">
+          <End Role="EventType" Type="Self.EventType" Multiplicity="1" />
+          <End Role="Event" Type="Self.Event" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EventType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Event">
+              <PropertyRef Name="EventTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Event_StateID_FK">
+          <End Role="EventState" Type="Self.EventState" Multiplicity="1" />
+          <End Role="Event" Type="Self.Event" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EventState">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Event">
+              <PropertyRef Name="StateID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Event_TownID_FK">
+          <End Role="Town" Type="Self.Town" Multiplicity="1" />
+          <End Role="Event" Type="Self.Event" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Town">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Event">
+              <PropertyRef Name="TownID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EventPerson_EventID_FK">
+          <End Role="Event" Type="Self.Event" Multiplicity="1" />
+          <End Role="EventPerson" Type="Self.EventPerson" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Event">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EventPerson">
+              <PropertyRef Name="EventID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EventPerson_PersonID_FK">
+          <End Role="Person" Type="Self.Person" Multiplicity="1" />
+          <End Role="EventPerson" Type="Self.EventPerson" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EventPerson">
+              <PropertyRef Name="PersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EventSubscription_EventTypeID_FK">
+          <End Role="EventType" Type="Self.EventType" Multiplicity="1" />
+          <End Role="EventSubscription" Type="Self.EventSubscription" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EventType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EventSubscription">
+              <PropertyRef Name="EventTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EventSubscription_PersonID_FK">
+          <End Role="Person" Type="Self.Person" Multiplicity="1" />
+          <End Role="EventSubscription" Type="Self.EventSubscription" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EventSubscription">
+              <PropertyRef Name="PersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EventSubscription_TownID_FK">
+          <End Role="Town" Type="Self.Town" Multiplicity="1" />
+          <End Role="EventSubscription" Type="Self.EventSubscription" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Town">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EventSubscription">
+              <PropertyRef Name="TownID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Person_PersonTypeID_FK">
+          <End Role="PersonType" Type="Self.PersonType" Multiplicity="1" />
+          <End Role="Person" Type="Self.Person" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PersonType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Person">
+              <PropertyRef Name="PersonTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PersonSubscription_PublisherID_FK">
+          <End Role="Person" Type="Self.Person" Multiplicity="1" />
+          <End Role="PersonSubscription" Type="Self.PersonSubscription" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PersonSubscription">
+              <PropertyRef Name="PublisherID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PersonSubscription_SubscriberID_FK">
+          <End Role="Person" Type="Self.Person" Multiplicity="1" />
+          <End Role="PersonSubscription" Type="Self.PersonSubscription" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PersonSubscription">
+              <PropertyRef Name="SubscriberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SotialNetwork_PersonID_FK">
+          <End Role="Person" Type="Self.Person" Multiplicity="1" />
+          <End Role="SotialNetwork" Type="Self.SotialNetwork" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SotialNetwork">
+              <PropertyRef Name="PersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="hackathon_shift_2016_testModelStoreContainer">
+          <EntitySet Name="Comment" EntityType="Self.Comment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Event" EntityType="Self.Event" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EventPerson" EntityType="Self.EventPerson" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EventState" EntityType="Self.EventState" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EventSubscription" EntityType="Self.EventSubscription" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EventType" EntityType="Self.EventType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Person" EntityType="Self.Person" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PersonSubscription" EntityType="Self.PersonSubscription" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PersonType" EntityType="Self.PersonType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SotialNetwork" EntityType="Self.SotialNetwork" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Town" EntityType="Self.Town" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="Comment_EventID_FK" Association="Self.Comment_EventID_FK">
+            <End Role="Event" EntitySet="Event" />
+            <End Role="Comment" EntitySet="Comment" />
+          </AssociationSet>
+          <AssociationSet Name="Comment_PersonID_FK" Association="Self.Comment_PersonID_FK">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="Comment" EntitySet="Comment" />
+          </AssociationSet>
+          <AssociationSet Name="Event_AuthorID_FK" Association="Self.Event_AuthorID_FK">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="Event" EntitySet="Event" />
+          </AssociationSet>
+          <AssociationSet Name="Event_EventTypeID_FK" Association="Self.Event_EventTypeID_FK">
+            <End Role="EventType" EntitySet="EventType" />
+            <End Role="Event" EntitySet="Event" />
+          </AssociationSet>
+          <AssociationSet Name="Event_StateID_FK" Association="Self.Event_StateID_FK">
+            <End Role="EventState" EntitySet="EventState" />
+            <End Role="Event" EntitySet="Event" />
+          </AssociationSet>
+          <AssociationSet Name="Event_TownID_FK" Association="Self.Event_TownID_FK">
+            <End Role="Town" EntitySet="Town" />
+            <End Role="Event" EntitySet="Event" />
+          </AssociationSet>
+          <AssociationSet Name="EventPerson_EventID_FK" Association="Self.EventPerson_EventID_FK">
+            <End Role="Event" EntitySet="Event" />
+            <End Role="EventPerson" EntitySet="EventPerson" />
+          </AssociationSet>
+          <AssociationSet Name="EventPerson_PersonID_FK" Association="Self.EventPerson_PersonID_FK">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="EventPerson" EntitySet="EventPerson" />
+          </AssociationSet>
+          <AssociationSet Name="EventSubscription_EventTypeID_FK" Association="Self.EventSubscription_EventTypeID_FK">
+            <End Role="EventType" EntitySet="EventType" />
+            <End Role="EventSubscription" EntitySet="EventSubscription" />
+          </AssociationSet>
+          <AssociationSet Name="EventSubscription_PersonID_FK" Association="Self.EventSubscription_PersonID_FK">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="EventSubscription" EntitySet="EventSubscription" />
+          </AssociationSet>
+          <AssociationSet Name="EventSubscription_TownID_FK" Association="Self.EventSubscription_TownID_FK">
+            <End Role="Town" EntitySet="Town" />
+            <End Role="EventSubscription" EntitySet="EventSubscription" />
+          </AssociationSet>
+          <AssociationSet Name="Person_PersonTypeID_FK" Association="Self.Person_PersonTypeID_FK">
+            <End Role="PersonType" EntitySet="PersonType" />
+            <End Role="Person" EntitySet="Person" />
+          </AssociationSet>
+          <AssociationSet Name="PersonSubscription_PublisherID_FK" Association="Self.PersonSubscription_PublisherID_FK">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="PersonSubscription" EntitySet="PersonSubscription" />
+          </AssociationSet>
+          <AssociationSet Name="PersonSubscription_SubscriberID_FK" Association="Self.PersonSubscription_SubscriberID_FK">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="PersonSubscription" EntitySet="PersonSubscription" />
+          </AssociationSet>
+          <AssociationSet Name="SotialNetwork_PersonID_FK" Association="Self.SotialNetwork_PersonID_FK">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="SotialNetwork" EntitySet="SotialNetwork" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="hackathon_shift_2016_testModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Comment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PersonID" Type="Int32" Nullable="false" />
+          <Property Name="EventID" Type="Int32" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Precision="7" />
+          <NavigationProperty Name="Event" Relationship="Self.Comment_EventID_FK" FromRole="Comment" ToRole="Event" />
+          <NavigationProperty Name="Person" Relationship="Self.Comment_PersonID_FK" FromRole="Comment" ToRole="Person" />
+        </EntityType>
+        <EntityType Name="Event">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="StartDate" Type="DateTime" Precision="7" />
+          <Property Name="EndDate" Type="DateTime" Precision="7" />
+          <Property Name="Longitude" Type="Single" />
+          <Property Name="Latitude" Type="Single" />
+          <Property Name="AuthorID" Type="Int32" Nullable="false" />
+          <Property Name="TownID" Type="Int32" Nullable="false" />
+          <Property Name="StateID" Type="Int32" Nullable="false" />
+          <Property Name="ImageUrl" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Contact" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EventTypeID" Type="Int32" Nullable="false" />
+          <Property Name="Radius" Type="Int32" />
+          <NavigationProperty Name="Comment" Relationship="Self.Comment_EventID_FK" FromRole="Event" ToRole="Comment" />
+          <NavigationProperty Name="Person" Relationship="Self.Event_AuthorID_FK" FromRole="Event" ToRole="Person" />
+          <NavigationProperty Name="EventType" Relationship="Self.Event_EventTypeID_FK" FromRole="Event" ToRole="EventType" />
+          <NavigationProperty Name="EventState" Relationship="Self.Event_StateID_FK" FromRole="Event" ToRole="EventState" />
+          <NavigationProperty Name="Town" Relationship="Self.Event_TownID_FK" FromRole="Event" ToRole="Town" />
+          <NavigationProperty Name="EventPerson" Relationship="Self.EventPerson_EventID_FK" FromRole="Event" ToRole="EventPerson" />
+        </EntityType>
+        <EntityType Name="EventPerson">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EventID" Type="Int32" Nullable="false" />
+          <Property Name="PersonID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Event" Relationship="Self.EventPerson_EventID_FK" FromRole="EventPerson" ToRole="Event" />
+          <NavigationProperty Name="Person" Relationship="Self.EventPerson_PersonID_FK" FromRole="EventPerson" ToRole="Person" />
+        </EntityType>
+        <EntityType Name="EventState">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Event" Relationship="Self.Event_StateID_FK" FromRole="EventState" ToRole="Event" />
+        </EntityType>
+        <EntityType Name="EventSubscription">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PersonID" Type="Int32" Nullable="false" />
+          <Property Name="EventTypeID" Type="Int32" Nullable="false" />
+          <Property Name="TownID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="EventType" Relationship="Self.EventSubscription_EventTypeID_FK" FromRole="EventSubscription" ToRole="EventType" />
+          <NavigationProperty Name="Person" Relationship="Self.EventSubscription_PersonID_FK" FromRole="EventSubscription" ToRole="Person" />
+          <NavigationProperty Name="Town" Relationship="Self.EventSubscription_TownID_FK" FromRole="EventSubscription" ToRole="Town" />
+        </EntityType>
+        <EntityType Name="EventType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Event" Relationship="Self.Event_EventTypeID_FK" FromRole="EventType" ToRole="Event" />
+          <NavigationProperty Name="EventSubscription" Relationship="Self.EventSubscription_EventTypeID_FK" FromRole="EventType" ToRole="EventSubscription" />
+        </EntityType>
+        <EntityType Name="Person">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BirthDate" Type="DateTime" Precision="0" />
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Rating" Type="Int32" Nullable="false" />
+          <Property Name="PersonTypeID" Type="Int32" Nullable="false" />
+          <Property Name="ImageUrl" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Comment" Relationship="Self.Comment_PersonID_FK" FromRole="Person" ToRole="Comment" />
+          <NavigationProperty Name="Event" Relationship="Self.Event_AuthorID_FK" FromRole="Person" ToRole="Event" />
+          <NavigationProperty Name="EventPerson" Relationship="Self.EventPerson_PersonID_FK" FromRole="Person" ToRole="EventPerson" />
+          <NavigationProperty Name="EventSubscription" Relationship="Self.EventSubscription_PersonID_FK" FromRole="Person" ToRole="EventSubscription" />
+          <NavigationProperty Name="PersonType" Relationship="Self.Person_PersonTypeID_FK" FromRole="Person" ToRole="PersonType" />
+          <NavigationProperty Name="PersonSubscription" Relationship="Self.PersonSubscription_PublisherID_FK" FromRole="Person" ToRole="PersonSubscription" />
+          <NavigationProperty Name="PersonSubscription1" Relationship="Self.PersonSubscription_SubscriberID_FK" FromRole="Person" ToRole="PersonSubscription" />
+          <NavigationProperty Name="SotialNetwork" Relationship="Self.SotialNetwork_PersonID_FK" FromRole="Person" ToRole="SotialNetwork" />
+        </EntityType>
+        <EntityType Name="PersonSubscription">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SubscriberID" Type="Int32" Nullable="false" />
+          <Property Name="PublisherID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Person" Relationship="Self.PersonSubscription_PublisherID_FK" FromRole="PersonSubscription" ToRole="Person" />
+          <NavigationProperty Name="Person1" Relationship="Self.PersonSubscription_SubscriberID_FK" FromRole="PersonSubscription" ToRole="Person" />
+        </EntityType>
+        <EntityType Name="PersonType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Person" Relationship="Self.Person_PersonTypeID_FK" FromRole="PersonType" ToRole="Person" />
+        </EntityType>
+        <EntityType Name="SotialNetwork">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PersonID" Type="Int32" Nullable="false" />
+          <Property Name="ProfileLink" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Person" Relationship="Self.SotialNetwork_PersonID_FK" FromRole="SotialNetwork" ToRole="Person" />
+        </EntityType>
+        <EntityType Name="Town">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Event" Relationship="Self.Event_TownID_FK" FromRole="Town" ToRole="Event" />
+          <NavigationProperty Name="EventSubscription" Relationship="Self.EventSubscription_TownID_FK" FromRole="Town" ToRole="EventSubscription" />
+        </EntityType>
+        <Association Name="Comment_EventID_FK">
+          <End Role="Event" Type="Self.Event" Multiplicity="1" />
+          <End Role="Comment" Type="Self.Comment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Event">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Comment">
+              <PropertyRef Name="EventID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Comment_PersonID_FK">
+          <End Role="Person" Type="Self.Person" Multiplicity="1" />
+          <End Role="Comment" Type="Self.Comment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Comment">
+              <PropertyRef Name="PersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Event_AuthorID_FK">
+          <End Role="Person" Type="Self.Person" Multiplicity="1" />
+          <End Role="Event" Type="Self.Event" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Event">
+              <PropertyRef Name="AuthorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Event_EventTypeID_FK">
+          <End Role="EventType" Type="Self.EventType" Multiplicity="1" />
+          <End Role="Event" Type="Self.Event" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EventType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Event">
+              <PropertyRef Name="EventTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Event_StateID_FK">
+          <End Role="EventState" Type="Self.EventState" Multiplicity="1" />
+          <End Role="Event" Type="Self.Event" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EventState">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Event">
+              <PropertyRef Name="StateID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Event_TownID_FK">
+          <End Role="Town" Type="Self.Town" Multiplicity="1" />
+          <End Role="Event" Type="Self.Event" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Town">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Event">
+              <PropertyRef Name="TownID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EventPerson_EventID_FK">
+          <End Role="Event" Type="Self.Event" Multiplicity="1" />
+          <End Role="EventPerson" Type="Self.EventPerson" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Event">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EventPerson">
+              <PropertyRef Name="EventID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EventPerson_PersonID_FK">
+          <End Role="Person" Type="Self.Person" Multiplicity="1" />
+          <End Role="EventPerson" Type="Self.EventPerson" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EventPerson">
+              <PropertyRef Name="PersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EventSubscription_EventTypeID_FK">
+          <End Role="EventType" Type="Self.EventType" Multiplicity="1" />
+          <End Role="EventSubscription" Type="Self.EventSubscription" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EventType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EventSubscription">
+              <PropertyRef Name="EventTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EventSubscription_PersonID_FK">
+          <End Role="Person" Type="Self.Person" Multiplicity="1" />
+          <End Role="EventSubscription" Type="Self.EventSubscription" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EventSubscription">
+              <PropertyRef Name="PersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EventSubscription_TownID_FK">
+          <End Role="Town" Type="Self.Town" Multiplicity="1" />
+          <End Role="EventSubscription" Type="Self.EventSubscription" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Town">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EventSubscription">
+              <PropertyRef Name="TownID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Person_PersonTypeID_FK">
+          <End Role="PersonType" Type="Self.PersonType" Multiplicity="1" />
+          <End Role="Person" Type="Self.Person" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PersonType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Person">
+              <PropertyRef Name="PersonTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PersonSubscription_PublisherID_FK">
+          <End Role="Person" Type="Self.Person" Multiplicity="1" />
+          <End Role="PersonSubscription" Type="Self.PersonSubscription" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PersonSubscription">
+              <PropertyRef Name="PublisherID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PersonSubscription_SubscriberID_FK">
+          <End Role="Person" Type="Self.Person" Multiplicity="1" />
+          <End Role="PersonSubscription" Type="Self.PersonSubscription" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PersonSubscription">
+              <PropertyRef Name="SubscriberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SotialNetwork_PersonID_FK">
+          <End Role="Person" Type="Self.Person" Multiplicity="1" />
+          <End Role="SotialNetwork" Type="Self.SotialNetwork" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SotialNetwork">
+              <PropertyRef Name="PersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="hackathon_shift_2016_testEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Comment" EntityType="Self.Comment" />
+          <EntitySet Name="Event" EntityType="Self.Event" />
+          <EntitySet Name="EventPerson" EntityType="Self.EventPerson" />
+          <EntitySet Name="EventState" EntityType="Self.EventState" />
+          <EntitySet Name="EventSubscription" EntityType="Self.EventSubscription" />
+          <EntitySet Name="EventType" EntityType="Self.EventType" />
+          <EntitySet Name="Person" EntityType="Self.Person" />
+          <EntitySet Name="PersonSubscription" EntityType="Self.PersonSubscription" />
+          <EntitySet Name="PersonType" EntityType="Self.PersonType" />
+          <EntitySet Name="SotialNetwork" EntityType="Self.SotialNetwork" />
+          <EntitySet Name="Town" EntityType="Self.Town" />
+          <AssociationSet Name="Comment_EventID_FK" Association="Self.Comment_EventID_FK">
+            <End Role="Event" EntitySet="Event" />
+            <End Role="Comment" EntitySet="Comment" />
+          </AssociationSet>
+          <AssociationSet Name="Comment_PersonID_FK" Association="Self.Comment_PersonID_FK">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="Comment" EntitySet="Comment" />
+          </AssociationSet>
+          <AssociationSet Name="Event_AuthorID_FK" Association="Self.Event_AuthorID_FK">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="Event" EntitySet="Event" />
+          </AssociationSet>
+          <AssociationSet Name="Event_EventTypeID_FK" Association="Self.Event_EventTypeID_FK">
+            <End Role="EventType" EntitySet="EventType" />
+            <End Role="Event" EntitySet="Event" />
+          </AssociationSet>
+          <AssociationSet Name="Event_StateID_FK" Association="Self.Event_StateID_FK">
+            <End Role="EventState" EntitySet="EventState" />
+            <End Role="Event" EntitySet="Event" />
+          </AssociationSet>
+          <AssociationSet Name="Event_TownID_FK" Association="Self.Event_TownID_FK">
+            <End Role="Town" EntitySet="Town" />
+            <End Role="Event" EntitySet="Event" />
+          </AssociationSet>
+          <AssociationSet Name="EventPerson_EventID_FK" Association="Self.EventPerson_EventID_FK">
+            <End Role="Event" EntitySet="Event" />
+            <End Role="EventPerson" EntitySet="EventPerson" />
+          </AssociationSet>
+          <AssociationSet Name="EventPerson_PersonID_FK" Association="Self.EventPerson_PersonID_FK">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="EventPerson" EntitySet="EventPerson" />
+          </AssociationSet>
+          <AssociationSet Name="EventSubscription_EventTypeID_FK" Association="Self.EventSubscription_EventTypeID_FK">
+            <End Role="EventType" EntitySet="EventType" />
+            <End Role="EventSubscription" EntitySet="EventSubscription" />
+          </AssociationSet>
+          <AssociationSet Name="EventSubscription_PersonID_FK" Association="Self.EventSubscription_PersonID_FK">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="EventSubscription" EntitySet="EventSubscription" />
+          </AssociationSet>
+          <AssociationSet Name="EventSubscription_TownID_FK" Association="Self.EventSubscription_TownID_FK">
+            <End Role="Town" EntitySet="Town" />
+            <End Role="EventSubscription" EntitySet="EventSubscription" />
+          </AssociationSet>
+          <AssociationSet Name="Person_PersonTypeID_FK" Association="Self.Person_PersonTypeID_FK">
+            <End Role="PersonType" EntitySet="PersonType" />
+            <End Role="Person" EntitySet="Person" />
+          </AssociationSet>
+          <AssociationSet Name="PersonSubscription_PublisherID_FK" Association="Self.PersonSubscription_PublisherID_FK">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="PersonSubscription" EntitySet="PersonSubscription" />
+          </AssociationSet>
+          <AssociationSet Name="PersonSubscription_SubscriberID_FK" Association="Self.PersonSubscription_SubscriberID_FK">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="PersonSubscription" EntitySet="PersonSubscription" />
+          </AssociationSet>
+          <AssociationSet Name="SotialNetwork_PersonID_FK" Association="Self.SotialNetwork_PersonID_FK">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="SotialNetwork" EntitySet="SotialNetwork" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="hackathon_shift_2016_testModelStoreContainer" CdmEntityContainer="hackathon_shift_2016_testEntities">
+          <EntitySetMapping Name="Comment">
+            <EntityTypeMapping TypeName="hackathon_shift_2016_testModel.Comment">
+              <MappingFragment StoreEntitySet="Comment">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Text" ColumnName="Text" />
+                <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+                <ScalarProperty Name="EventID" ColumnName="EventID" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Event">
+            <EntityTypeMapping TypeName="hackathon_shift_2016_testModel.Event">
+              <MappingFragment StoreEntitySet="Event">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="AuthorID" ColumnName="AuthorID" />
+                <ScalarProperty Name="TownID" ColumnName="TownID" />
+                <ScalarProperty Name="StateID" ColumnName="StateID" />
+                <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+                <ScalarProperty Name="Contact" ColumnName="Contact" />
+                <ScalarProperty Name="EventTypeID" ColumnName="EventTypeID" />
+                <ScalarProperty Name="Radius" ColumnName="Radius" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EventPerson">
+            <EntityTypeMapping TypeName="hackathon_shift_2016_testModel.EventPerson">
+              <MappingFragment StoreEntitySet="EventPerson">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="EventID" ColumnName="EventID" />
+                <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EventState">
+            <EntityTypeMapping TypeName="hackathon_shift_2016_testModel.EventState">
+              <MappingFragment StoreEntitySet="EventState">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EventSubscription">
+            <EntityTypeMapping TypeName="hackathon_shift_2016_testModel.EventSubscription">
+              <MappingFragment StoreEntitySet="EventSubscription">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+                <ScalarProperty Name="EventTypeID" ColumnName="EventTypeID" />
+                <ScalarProperty Name="TownID" ColumnName="TownID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EventType">
+            <EntityTypeMapping TypeName="hackathon_shift_2016_testModel.EventType">
+              <MappingFragment StoreEntitySet="EventType">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Person">
+            <EntityTypeMapping TypeName="hackathon_shift_2016_testModel.Person">
+              <MappingFragment StoreEntitySet="Person">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Rating" ColumnName="Rating" />
+                <ScalarProperty Name="PersonTypeID" ColumnName="PersonTypeID" />
+                <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PersonSubscription">
+            <EntityTypeMapping TypeName="hackathon_shift_2016_testModel.PersonSubscription">
+              <MappingFragment StoreEntitySet="PersonSubscription">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="SubscriberID" ColumnName="SubscriberID" />
+                <ScalarProperty Name="PublisherID" ColumnName="PublisherID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PersonType">
+            <EntityTypeMapping TypeName="hackathon_shift_2016_testModel.PersonType">
+              <MappingFragment StoreEntitySet="PersonType">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SotialNetwork">
+            <EntityTypeMapping TypeName="hackathon_shift_2016_testModel.SotialNetwork">
+              <MappingFragment StoreEntitySet="SotialNetwork">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+                <ScalarProperty Name="ProfileLink" ColumnName="ProfileLink" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Town">
+            <EntityTypeMapping TypeName="hackathon_shift_2016_testModel.Town">
+              <MappingFragment StoreEntitySet="Town">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

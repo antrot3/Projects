@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1"
+    android:background="@drawable/test">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Ispiti (1-30)"
+        android:id="@+id/textView5" />
+
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"></TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"></TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"></TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"></TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"></TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"></TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"></TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"></TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"></TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Test 1"
+                android:onClick="promjenastrane4"
+                android:id="@+id/button2"
+                android:layout_column="0"
+                android:alpha="0.25"
+            />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Test2"
+                android:onClick="promjenastrane41"
+                android:id="@+id/button3"
+                android:layout_column="5"
+                android:alpha="0.25" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Test3"
+                android:onClick="promjenastrane4"
+                android:id="@+id/button4"
+                android:layout_column="9"
+                android:alpha="0.25" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Test4"
+                android:onClick="promjenastrane4"
+                android:id="@+id/button5"
+                android:layout_column="11"
+                android:alpha="0.25"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Test5"
+                android:onClick="promjenastrane4"
+                android:id="@+id/button6"
+                android:layout_column="0"
+                android:alpha="0.25"
+                />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Test6"
+                android:onClick="promjenastrane4"
+                android:id="@+id/button7"
+                android:alpha="0.25"
+                android:layout_column="5" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Test7"
+                android:onClick="promjenastrane4"
+                android:id="@+id/button8"
+                android:layout_column="9"
+                android:alpha="0.25"/>
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Test8"
+                android:onClick="promjenastrane4"
+                android:id="@+id/button9"
+                android:layout_column="11"
+                android:alpha="0.25"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Test9"
+                android:onClick="promjenastrane4"
+                android:id="@+id/button10"
+                android:alpha="0.25"
+                android:layout_column="0" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Test10"
+                android:onClick="promjenastrane4"
+                android:id="@+id/button11"
+                android:alpha="0.25"
+                android:layout_column="5" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Test11"
+                android:onClick="promjenastrane4"
+                android:alpha="0.25"
+                android:id="@+id/button18"
+                android:layout_column="9" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Test12"
+                android:alpha="0.25"
+                android:onClick="promjenastrane4"
+                android:id="@+id/button25"
+                android:layout_column="11" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Test13"
+                android:onClick="promjenastrane4"
+                android:id="@+id/button12"
+                android:alpha="0.25"
+                android:layout_column="0" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Test14"
+                android:onClick="promjenastrane4"
+                android:id="@+id/button19"
+                android:alpha="0.25"
+                android:layout_column="5" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Test15"
+                android:onClick="promjenastrane4"
+                android:id="@+id/button26"
+                android:alpha="0.25"
+                android:layout_column="9" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Test16"
+                android:alpha="0.25"
+                android:onClick="promjenastrane4"
+                android:id="@+id/button13"
+                android:layout_column="11" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"></TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Test17"
+                android:alpha="0.25"
+                android:onClick="promjenastrane4"
+                android:id="@+id/button20"
+                android:layout_column="0" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Test18"
+                android:alpha="0.25"
+                android:onClick="promjenastrane4"
+                android:id="@+id/button27"
+                android:layout_column="5" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Test19"
+                android:alpha="0.25"
+                android:onClick="promjenastrane4"
+                android:id="@+id/button14"
+                android:layout_column="9" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Test20"
+                android:alpha="0.25"
+                android:onClick="promjenastrane4"
+                android:id="@+id/button21"
+                android:layout_column="11" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Test21"
+                android:alpha="0.25"
+                android:onClick="promjenastrane4"
+                android:id="@+id/button28"
+                android:layout_column="0" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Test22"
+                android:alpha="0.25"
+                android:onClick="promjenastrane4"
+                android:id="@+id/button15"
+                android:layout_column="5" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Test23"
+                android:alpha="0.25"
+                android:onClick="promjenastrane4"
+
+                android:id="@+id/button22"
+                android:layout_column="9" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Test24"
+                android:alpha="0.25"
+                android:onClick="promjenastrane4"
+                android:id="@+id/button29"
+                android:layout_column="11" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"></TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:alpha="0.25"
+                android:layout_height="wrap_content"
+                android:text="Test25"
+                android:onClick="promjenastrane4"
+                android:id="@+id/button16"
+                android:layout_column="0" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Test26"
+                android:alpha="0.25"
+                android:onClick="promjenastrane4"
+                android:id="@+id/button23"
+                android:layout_column="5" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Test27"
+                android:alpha="0.25"
+                android:onClick="promjenastrane4"
+                android:id="@+id/button30"
+                android:layout_column="9" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Test28"
+                android:alpha="0.25"
+                android:onClick="promjenastrane4"
+                android:id="@+id/button17"
+                android:layout_column="11" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Test29"
+                android:alpha="0.25"
+                android:onClick="promjenastrane4"
+                android:id="@+id/button24"
+                android:layout_column="0" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Test30"
+                android:alpha="0.25"
+                android:onClick="promjenastrane4"
+                android:id="@+id/button31"
+                android:layout_column="5" />
+
+        </TableRow>
+    </TableLayout>
+</LinearLayout>

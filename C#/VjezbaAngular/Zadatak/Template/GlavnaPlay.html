@@ -1,0 +1,270 @@
+﻿<style type="text/css">
+        #tblContainer, #tblcollections, #tblCRUD, td {
+            border: double;
+        }
+
+        th {
+            background-color: darkgray;
+        }
+
+        #dvcollection {
+            height: 500px;
+            overflow-y: scroll;
+        }
+    </style>
+    <style>
+        .CSSTableGenerator {
+            margin: 0px;
+            padding: 0px;
+            width: 100%;
+            box-shadow: 10px 10px 5px #888888;
+            border: 1px solid #000000;
+            -moz-border-radius-bottomleft: 0px;
+            -webkit-border-bottom-left-radius: 0px;
+            border-bottom-left-radius: 0px;
+            -moz-border-radius-bottomright: 0px;
+            -webkit-border-bottom-right-radius: 0px;
+            border-bottom-right-radius: 0px;
+            -moz-border-radius-topright: 0px;
+            -webkit-border-top-right-radius: 0px;
+            border-top-right-radius: 0px;
+            -moz-border-radius-topleft: 0px;
+            -webkit-border-top-left-radius: 0px;
+            border-top-left-radius: 0px;
+        }
+
+            .CSSTableGenerator table {
+                border-collapse: collapse;
+                border-spacing: 0;
+                width: 70%;
+                height: 70%;
+                margin: 0px;
+                padding: 0px;
+            }
+
+            .CSSTableGenerator tr:last-child td:last-child {
+                -moz-border-radius-bottomright: 0px;
+                -webkit-border-bottom-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+            }
+
+            .CSSTableGenerator table tr:first-child td:first-child {
+                -moz-border-radius-topleft: 0px;
+                -webkit-border-top-left-radius: 0px;
+                border-top-left-radius: 0px;
+            }
+
+            .CSSTableGenerator table tr:first-child td:last-child {
+                -moz-border-radius-topright: 0px;
+                -webkit-border-top-right-radius: 0px;
+                border-top-right-radius: 0px;
+            }
+
+            .CSSTableGenerator tr:last-child td:first-child {
+                -moz-border-radius-bottomleft: 0px;
+                -webkit-border-bottom-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+            }
+
+            .CSSTableGenerator tr:hover td {
+            }
+
+            .CSSTableGenerator tr:nth-child(odd) {
+                background-color: #aad4ff;
+            }
+
+            .CSSTableGenerator tr:nth-child(even) {
+                background-color: #ffffff;
+            }
+
+            .CSSTableGenerator td {
+                vertical-align: middle;
+                border: 1px solid #000000;
+                border-width: 0px 1px 1px 0px;
+                text-align: left;
+                padding: 7px;
+                font-size: 10px;
+                font-family: Arial;
+                font-weight: normal;
+                color: #000000;
+            }
+
+            .CSSTableGenerator tr:last-child td {
+                border-width: 0px 1px 0px 0px;
+            }
+
+            .CSSTableGenerator tr td:last-child {
+                border-width: 0px 0px 1px 0px;
+            }
+
+            .CSSTableGenerator tr:last-child td:last-child {
+                border-width: 0px 0px 0px 0px;
+            }
+
+            .CSSTableGenerator tr:first-child td {
+                background: -o-linear-gradient(bottom, #005fbf 5%, #003f7f 100%);
+                background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #005fbf), color-stop(1, #003f7f) );
+                background: -moz-linear-gradient( center top, #005fbf 5%, #003f7f 100% );
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#005fbf", endColorstr="#003f7f");
+                background: -o-linear-gradient(top,#005fbf,003f7f);
+                background-color: #005fbf;
+                border: 0px solid #000000;
+                text-align: center;
+                border-width: 0px 0px 1px 1px;
+                font-size: 12px;
+                font-family: Arial;
+                font-weight: bold;
+                color: #ffffff;
+            }
+
+            .CSSTableGenerator tr:first-child:hover td {
+                background: -o-linear-gradient(bottom, #005fbf 5%, #003f7f 100%);
+                background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #005fbf), color-stop(1, #003f7f) );
+                background: -moz-linear-gradient( center top, #005fbf 5%, #003f7f 100% );
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#005fbf", endColorstr="#003f7f");
+                background: -o-linear-gradient(top,#005fbf,003f7f);
+                background-color: #005fbf;
+            }
+
+            .CSSTableGenerator tr:first-child td:first-child {
+                border-width: 0px 0px 1px 0px;
+            }
+
+            .CSSTableGenerator tr:first-child td:last-child {
+                border-width: 0px 0px 1px 1px;
+            }
+    </style>
+    <table id="tblcontainer" ng-app="crudModule" ng-controller="crudControllerGlavna">
+        <tbody>
+            <tr>
+                <td>
+                    Za uređivanje kliknit na pismu i nakone iz nekog razloga <br/>back i foward ili refrash
+
+                    <table class="CSSTableGenerator" ng-controller="crudControllerGlavna" id="tblcrud">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <span>Idprijenosnice</span>
+                                </td>
+                                <td>
+                                    <input type="text" id="mID" ng-model="Id3">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span>IdPlaylista</span>
+                                </td>
+                                <td>
+                                    <input type="text" readonly="readonly" id="mID" ng-model="Id">
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <span>Id</span>
+                                </td>
+                                <td>
+                                    <input type="text" id="mUrl" required="" ng-model="Id2">
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <input type="button" id="new" value="New" ng-click="clear()">
+                                </td>
+                                <td>
+                                    <input type="button" id="save" value="Dodaj" save"" ng-click="save2()">
+                                    <input type="button" id="delete" value="Izbriši" ng-click="delete2()">
+                                    <a href="#!/GlavnaPlay/{{Id}}" type="button" value="GlavnaPlay" id="mID" ng-model="bla">Osvježi</a>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td>------{{Message}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div><p></p></div>
+                </td>
+                <td>
+                    <div id="dvcollection">
+                        <div><label>Search Ime </label><input type="text" ng-model="searchime" /></div>
+                    <div><label>Search Izvodac </label><input type="text" ng-model="searchizvodac" /></div>
+                   <table class="CSSTableGenerator"  id="tblcollections">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Ime</th>
+                                    <th>Izvodac</th>
+                                    <th>Url</th>
+
+                                </tr>
+                            </thead>
+                       <tbody ng-repeat="amo in TablicaHitovas|filter:{Ime:searchime,Izvodac:searchizvodac}">
+                           <tr ng-click="get3(amo)">
+                               <td>
+                                   <a href="#!/Index/{{amo.Id}}" class="thumb"></a>
+                                   <a href="#!/Index/{{amo.Id}}" ng-click="get3(amo)">{{amo.Id}}</a>
+                               </td>
+                               <td> <span>{{amo.Ime}}</span></td>
+                               <td> <span>{{amo.Izvodac}}</span></td>
+                               <td> <span>{{amo.url}}</span></td>
+
+                           </tr>
+
+                       </tbody>
+                        </table>
+                        <div>Playlista</div>
+                        <table class="CSSTableGenerator" ng-controller="crudControllerGlavna" id="tblcollections">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Ime</th>
+                                    <th>Izvodac</th>
+                                    <th>Url</th>
+
+                                </tr>
+                            </thead>
+                            <tbody ng-repeat="muz in novatabela|filter:{Ime:searchime,Izvodac:searchizvodac}">
+                                <tr>
+                                    <td> <span>{{muz.Id}}</span></td>
+                                    <td> <span>{{muz.Ime}}</span></td>
+                                    <td> <span>{{muz.Izvodac}}</span></td>
+                                    <td> <span>{{muz.url}}</span></td>
+                                    <td> <span>{{muz.PrijenosnicaId}}</span></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+                    </div>
+                </td>
+                <td>
+                    <div id="dvcollection">
+                         <table class="CSSTableGenerator" id="tblcollections">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>PrijenosnicaID</th>
+                                    <th>Playlista</th>
+                                    <th>Ime Pjesme Koja je povezana s poveznicom</th>
+
+                                </tr>
+                            </thead>
+                            <tbody ng-repeat="Brojevi in Prijenosnica|filter:search">
+                                <tr ng-click="get2(la)">
+                                    <td>
+                                        <a href="#!/Index/{{Brojevi.Id}} class=" thumb"></a>
+                                        <a href="#!/Index/{{Brojevi.Id}}" ng-click="get(amo)">{{Brojevi.Id}}</a>
+                                    </td>
+                                    <td> <span>{{Brojevi.PrijenosnicaId}}</span></td>
+                                    <td> <span>{{Brojevi.Idplaylista}}</span></td>
+                                    <td> <span>{{Brojevi.TablicaHitova.Ime}}</span></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                        <p>Ovdje odaberite što želite izbrisati(Možete brisati sa svih playlista)-Klikniti bilo sto samo ne broj</p>
+                    </div>
+
+    </table>

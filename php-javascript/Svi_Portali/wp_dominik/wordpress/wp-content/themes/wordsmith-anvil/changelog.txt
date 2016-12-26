@@ -1,0 +1,260 @@
+----------
+Changelog
+----------
+
+Version 1.1
+-----------
+
+-Added the gallery-caption class to CSS
+-Removed extraneous tags from style.css
+-Updated License Notification
+-Added the call to Wordpress function comment_form() and rewrote the comment.php page to be consistent with that function
+
+Version 1.2
+-----------
+
+-Moved div tags for adcode inside of conditional statements on single.php and page.php, as well as two template pages
+-Adjusted CSS to fix wrapping issues around post thumbs on single posts and pages
+-Other minor CSS changes made to improve layout
+
+Version 1.2.1
+-------------
+
+-Changed get_bloginfo('url') found in the file 404.php - to - home_url() instead.
+-Changed get_bloginfo('template_url') found in the file wa-options.php - to - get_template_directory_uri() instead.
+-Changed bloginfo('url') found in the file searchform.php - to - echo home_url() instead.
+-Changed bloginfo('url') found in the file header.php - to - echo home_url() instead.
+-Changed bloginfo('url') found in the file footer.php - to - echo home_url() instead.
+-Changed bloginfo('template_url') found in the file subscribe.php - to - get_template_directory_uri() instead.
+-Changed bloginfo('template_url') found in the file sidebar.php - to - get_template_directory_uri() instead.
+-Changed bloginfo('template_directory') found in the file header.php - to - get_template_directory_uri() instead.
+-Changed bloginfo('stylesheet_directory') found in the file header.php - to - echo get_template_directory_uri() instead.
+-Changed include statement in sidebar.php - to - get_template_part() instead.
+-Centered a line of text on the 404 page
+-Changed "Not Found" on searches a little more friendly
+-Edited "Not Found" on searches to make it a little more friendly
+-Added some conditional statements and a couple more custom fields on the blog front page template
+-Removed conflicting extraneous class from home.css
+
+Version 1.2.2
+-------------
+
+-Made some edits to main.css and ie.css
+-Edited index.php to be consistent with layout in front page template
+-Fixed button display in sidebar widget
+-Changed screenshot.png size to 300x255
+-Removed some extraneous functions from the functions.php file
+-Changed code to call three most recent sticky posts in Front/Home Page Template
+
+Version 1.3.0
+--------------
+
+-Added Fallback Menus so even if the custom menus are not setup, at least the default menus will provide a category menu on the top and a page menu on the side
+
+Version 1.3.1
+--------------
+-Updated some static content on Admin Options Page to dynamic content
+-Removed a default credit link in the footer
+ 
+Version 1.3.2
+--------------
+
+-Changed mo prefix so it could be recognized by loat_text_domain()
+
+Version 1.4
+--------------
+
+-fixed one theme_domain statement at line 161 of functions.php
+-added a mention in this file about the font licenses which are found in the fonts directory
+-removed a copyright link in the header
+-removed backward compatible fallback include statement; leaving only the get_template_part() part of the statement
+-removed "Common Emoticons (smileys) are also known to work, too." from the bottom of the comment form, because it was a higher priority than writing a filter for comment_form()
+-changed the size of the screenshot because either the max size requirement changed in the past week or is dependent upon who reviews the theme. Regardless, I took 15px off the bottom of the image.
+-added conditional comment to index.php and the blog template page so that posts without a title will still display a link to the post
+-added a clear break following the content on single post pages
+-added css to prevent large image overflow on single pages and wide pages
+-decreased max content size to accomodate placement of images that are as wide as the content area and need padding
+-removed an extraneous alt tag
+-added a filter to the functions page to allow posts without titles to have a clickable link
+-fixed a couple typos in the 404 page
+
+Version 1.4.1
+-------------
+
+-edited a case statement in wa-options.php in response to a reported intermittent undefined index error that I was unable to reproduce myself
+
+Version 1.4.2
+-------------
+-fixed two tags/functions in 404.php; which were missing one underscore
+-fixed improper theme reference in editor-style-rtl.css and editor-style.css
+-added a reference in style.css to the license.txt file
+-added new class in main.css and admin.css to facilitate removal of inline align="center" on div and span tags in 404.php and wa-options.php
+-removed align="center" on span and div tags in 404.php and one instance in wa-options.php and replaced with class assignments
+
+Version 1.5.0
+-------------
+-changed single quotes to double quotes on img src attribute for page_product template
+-replaced deprecated caller_get_posts with ignore_sticky_posts in page_home.php
+-renamed various functions and variables so that they are all unique to this theme and consistent across the theme
+-removed javascript for sidebar nav menu from sidebar.php and placed in wsmain.js
+-removed favicon code - you need to add it yourself if you want to display a favicon (that's the way Wordpress Theme Reviewers want it, sorry)
+-removed get_template_part() in close to thirty instances and replaced with locate_template()
+-removed the theme activation redirect from wa-options.php
+-removed one of the custom fonts with this theme, even though it was freeware, Wordpress reviewers said I cant put it in this free theme
+-edited four css files related to above font removal
+-removed internationalization from theme, because a portion of the text was not converted and Wordpress Reviewers said it was all or nothing
+-changed comment regarding credit link in functions.php to make it consistent with the code in footer.php
+-per directive from Wordpress Reviewers removed the filter that would prevent Wordpress from automatically generating parapgraph tags even when you do not want them used
+-changed some code in wa-options.php
+-mail() function in 404.php was changed to wp_mail() although mail() worked trouble free.
+-added $sanitize_callback parameter to register_settings()
+-changed post thumbnail check from function_exists() to if ( has_post_thumbnail($post->ID) )
+-changed sidebar widget coding by registering sidebars using the anvil_register_sidebars() on the widgets_init hook
+-changed widget code slightly in sidebar and above footer
+-moved two calls for external javascript from header to functions.php
+-changed class="post" to post_class() on page.php and page_wide_noside.php
+-appended default to pingbacks and trackbacks in comment form
+-unhooked admin css and admin js files from all admin pages except themes.php
+-added esc_attr() to attributes of some variables; replacing esc_attr_e() and replaced with esc_textarea() twice in wa-options.php
+-changed name of wa-options.php to anvil-options.php to complete standardizing of naming conventions for this theme. All prior mention of wa-options.php should be considered anvil-options.php
+-changed style enqueue for home.css; so that it is enqueued for the page_home template rather than for the front_page (fixes some style issues when the template is not used for the front page)
+-added some additional margin to single images and to alignright and alignleft elements
+-restyled the table, th, thead, tfoot and caption elements
+-restyled dl, dl and dd elements
+-restyled size-full images and wp-captions to contain them within the maximum allowable width parameters of the main content area, sidebar and wide column pages
+-restyled sidebar img, table, td and div tags so unruly feeds can be contained within the width parameters of the sidebar
+-converted instances of query_posts() in sidebar.php, page_blog.php and page_home.php to new WP_Query()
+-removed 1942 Report font set due to freeware licenses not acceptable by Wordpress
+-replaced removed font set with Sears Tower Tension Type Free Font
+-changed some div tags to section tags due to new W3C validation errors and claim that divs are useless ?!@#@?
+-reversed esc_attr() and esc_textarea() back to esc_attr_e() because the former two broke the pages
+-reversed most changes of locate_template() back to get_template_part() because locate_template() did not work
+-removed extraneous h tags from above-footer.php
+-changed wp_link_pages array in single.php to eliminate closing p tag error
+-restyled the top menu and eliminated the SuperFish jQuery; so it is now a completely CSS horizontal menu
+-restyled the nextpage pagination [wp_link_pages()] for pages, single posts and the wide column template page
+-added validation and sanitization callback function to admin options, for use with register setting
+
+Version 1.5.1
+-------------
+-removed three extraneous development files
+
+Version 1.5.2
+-------------
+-added editor-style.css back to theme
+-removed attribute value from input element on sidebar form
+-replaced esc_textarea in sanitize function with filter_var for ad boxes, because esc_textarea does not allow javascript and esc_js only applies to inline javascript and none of the other built in wp functions work for sanitizing javascript. So, I used a php function for that purpose.
+
+Version 1.5.3
+-------------
+-edited meta.php to replace anvil_comment() with comment_popup_link() so "Comments are Disabled" is displayed now. 
+-moved wp_head() down about six lines in header.php below the analytics code, per directive of theme reviewer. If your Analytics do not work, comment it out and uncomment the commented out line.
+-moved wp_footer() down about 2-3 lines in footer.php below the analytics code, per directive of theme reviewer. If your Analytics do not work, comment it out and uncomment the commented out line.
+-added conditional statement to enqueue comment-reply in functions.php
+-modified css selector for img attribute on single page. Changed img to img.alignnone so it would not overide the img.alignright, img.alignleft and img.aligncenter
+-added a statement that donations are not required, but wouldnt it make you feel warm and fuzzy to donate
+-added admin option to remove the auto paragraph tags
+-commented out the remove auto tags in functions.php
+-updated functions.php re commenting out functions and adding new theme option
+-add not is page() for the fifth parameter to the comment_popup_link() used in meta.php so "Comments Disabled" will display only on Posts ... not on Pages 
+-after moving the wp_head() the top menu display css had to be edited to remove the 300px offset
+-also, unsure what happened to the css for ol li a, so I had to edit the css to re-style these elements
+-CSS edits after noticing the th text in tables needed css edits and links in tables also needed the same
+
+Version 1.6.0
+-------------
+-removed all options for analytics and ad code
+-removed sanitizing code for analytics and ad code
+-removed the reference to these options from each affected page of the theme
+-updated the FAQs in the readme file due to the removal of those options
+-add a new housekeeping function to get rid of bad br tags that follow closing label tags
+-add a new housekeeping function to get rid of p tags that wrap closing anchor tags
+
+Version 1.6.1
+-------------
+-changed call to Google API jQuery script from ver 1.4 to 1.6.1
+------------------------------------
+Accepted by WordPress Repository
+------------------------------------
+
+Version 1.6.2
+-------------
+-styled the comment form
+-re-styled part of commentlist section
+-updated styling on pagination links
+------------------------------------
+Added to WordPress Repository
+------------------------------------
+
+Version 1.6.3
+-------------
+-fixed display issue that affected only certain versions of Internet Explorer. Added one line to the ie.css file to properly display the top menu in IE. I had missed fixing the display of this element when I corrected the other display errors which appeared only after moving a few enqueued scripts above wp_head()
+
+Version 1.6.4
+-------------
+-added option to enable/disable display of default logo, in addition to custom logo
+-edited header.php, main.css and added two functions so longer blog names will display better
+-set display of blog name to utilize entire header area when no logo is displayed
+
+Version 1.6.5
+-------------
+-added if (function_exists('register_nav_menu')) to register_anvil_primary_menu() to eliminate Call to undefined function register_nav_menu() error.
+
+Version 1.6.6
+-------------
+-added if (function_exists('register_nav_menu')) to register_anvil_secondary_menu() to eliminate Call to undefined function register_nav_menu() error.
+
+Version 1.6.7
+-------------
+-added second & third args for wp_kses() in anvil-functions.php because although codex said it was not necessary, errors were generating as a result
+-fixed argument error for logo functions
+
+Version 1.6.8
+-------------
+-removed use of get_theme_data() functions in anvil-options.php and replaced with DEFINE statements per recommendations from Otto
+-commented out custom fonts in editor-style.css in response to issues some Mac users complained of when using the Visual Editor
+
+Version 1.6.9
+-------------
+-added an option to disable display of the searchbar above the left sidebar menu
+-added an option to disable the display of the latest post in the sidebar, below the menu
+-split up the WordPress credit and the Developer credit and provided an alternate option to include a hidden developer link to show support
+-changed some of the editorial content in the anvil-options.php page
+-added an option to disable the large FIRST Letter of paragraphs
+-added an option to disable the display of the site title in the header/masthead area
+
+Version 2.0
+-------------
+-cleaned up some sidebar.php code 
+-made full posts the default and added an option to display custom formatted short posts
+-added an option to display excerpts rather than full posts or custom formatted short posts
+-added option to determine the number of words to be displayed in posts using custom formatted post format on home and/or front page
+-added option to determine the number of words to be displayed in excerpts
+-added new comment_form callback and related code
+-added an option to use an alternate Visual Editor stylesheet
+
+Version 2.1
+-------------
+-renamed some of the prior functions and options names; replacing tsd311 with anvil, for consistency across the theme
+-added another subscribe option for Google+
+-cleaned up some of the code in several pages
+-added a comment rss link below the comment_form()
+
+-to facilitate the above listed new options and edits in the past four version upgrades, most all of the pages were edited to some degree.
+
+Version 2.2
+-------------
+-In response to recommendations from WPTRT and the TRML ...
+--Added additional arguments to wp_register_script and wp_register_style calls so correct versions would be passed
+--changed jquery tags to no-conflict mode tags in two js files
+--switched from registering and enqueuing CDN version of jQuery, to WP bundled version
+--combined multiple if ( !is_admin() ) functions in functions.php
+--rewrote registering and enqueuing of admin scripts and styles to include use of $hook_suffix
+-added another admin page link for the Support & Feedback Forum Page, because users continue to email me for support
+-added one more user-requested option to theme options page; to disable display of postmeta information 
+-made a couple minor css edits consistent with above changes
+
+Version 2.2.1
+-------------
+-added if ( is_user_logged_in() ) for $current_user->display_name in anvil-options.php to prevent Undefined property: WP_User errors when user or site visitor not logged in
+-changed font color proeprty in custom.css to "inherit" (custom.css is called when a user disables p:first-letter)

@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>SONAR</title>
+    @Scripts.Render("~/vendorScripts")
+    @Scripts.Render("~/appScripts")
+    @Styles.Render("~/vendorStyles")
+    <link href="Style/Style.css" rel="stylesheet" />
+    <link href="~/Style/form-elements.css" rel="stylesheet" />
+    <link href="~/Style/font-awesome.css" rel="stylesheet" />
+    <link href="~/Style/font-awesome.min.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="The description of my page" />
+</head>
+
+<body ng-app="sonarApp" ng-controller="layoutController" style="background-color: rgb(25, 185, 231); background-image: url('../../Images/2.jpg');">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <img src="~/Images/logo.png" style="width:120px;" />
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#/">Sonar</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#/">Home</a></li>
+                    <li><a href="#/profile">Profile</a></li>
+                    <li><a href="#/events">Your Events</a></li>
+                    <li><a href="#/friends">Friends</a></li>
+                    <li ng-show="!isLoggedIn"><a href="#/login">Login</a></li>
+                    <li ng-show="isLoggedIn" ng-click="logout()"><a href="#/logout">LogOut</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div ng-view></div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFN-6n_8rTK7x2sgRmONkTd7STu3yJpew&callback=angular.noop"></script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+ <head>
+  <title>TableLess Ajax Contact Form (Demo)</title>
+  <meta name="keywords" content="form, divs" />
+  <meta name="description" content="a css tableless ajax contact form" />
+
+<!-- JQuery -->
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+
+ <script type="text/javascript">                                         
+<!--  
+// When DOM is ready
+$(document).ready(function(){
+    
+    // ------- Submit First Form -------
+	$("#ajax-contact-form").submit(function() {
+		var str = $(this).serialize();
+
+		$.ajax({
+			type: "POST",
+			url: "includes/contact-process.php",
+			data: str,
+			success: function(msg) {
+    			// Message Sent? Show the 'Thank You' message and hide the form
+    			if(msg == 'OK') {
+    				result = '<div class="notification_ok">Your message has been sent. Thank you!</div>';
+    				$("#fields_contact").hide();
+    			} else {
+    				result = msg;
+    			}
+    			$('#note_contact').html(result);
+			}
+		});
+		return false;
+	});
+    
+    // ------- Submit Second Form -------
+	$("#feedback-form").submit(function() {
+		var str = $(this).serialize();
+
+		$.ajax({
+			type: "POST",
+			url: "includes/feedback-process.php",
+			data: str,
+			success: function(msg) {
+    			// Message Sent? Show the 'Thank You' message and hide the form
+    			if(msg == 'OK') {
+    				result = '<div class="notification_ok">Your feedback has been sent. Thank you!</div>';
+    				$("#fields_feedback").hide();
+    			} else {
+    				result = msg;
+    			}
+    			$('#note_feedback').html(result);
+			}
+		});
+		return false;
+	});
+});
+-->
+ </script>  
+
+<link rel="stylesheet" type="text/css" href="style/stylesheet.css" />
+<link rel="stylesheet" type="text/css" href="style/bootstrap.css" />
+
+</head>
+
+ <body>
+ 
+ <div style="width:100%;">
+ 
+	<div style="float: left; width: 400px; margin: 0 auto;">
+		
+        <h2 style="margin: 20px 0 20px 150px;">Contact Us</h2>
+		
+        	<div id="note"></div>
+
+			<div id="fields">
+				<form id="ajax-contact-form" method="post" action="">
+				<label>Name</label><input type="text" name="name" value="" /><br />
+
+				<label>E-Mail</label><input type="text" name="email" value="" /><br />
+
+				<label>Subject</label><input type="text" name="subject" value="" /><br />
+
+				<label>Comments</label><textarea name="message" rows="5" cols="25"></textarea><br />
+
+				<label>&nbsp;</label><input class="btn" type="submit" name="submit" value="Send Message" />
+				</form>
+			</div>
+
+	</div>
+    
+	<div style="float: left; width: 400px; margin: 0 auto;">
+		
+        <h3 style="margin: 20px 0 20px 25px;">What do you think about this website?</h3>
+		
+        	<div id="note_feedback"></div>
+
+			<div id="fields_feedback">
+            
+                <form id="feedback-form" method="post" action="">
+                    <label>Name</label><input class="textbox" type="text" name="name" value="" /><br />
+                
+                    <label>Opinion</label><textarea class="textbox" name="opinion" rows="5" cols="25"></textarea><br />
+                
+                    <label>&nbsp;</label><input id="submit-two" class="btn" type="submit" name="submit" value="Submit" />
+                </form>
+                
+			</div>
+	</div>
+    <div style="clear:both;"></div>
+</div>
+ 
+ </body>
+</html>

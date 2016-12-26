@@ -1,0 +1,45 @@
+<resources>
+
+    <!-- API 21 == Lollipop -->
+
+    <!-- theme usable same as 'parent' theme + some addons -->
+    <style name="MaterialTheme" parent="ParentMaterialTheme">
+
+    </style>
+
+    <!-- parent theme for both (below API 21 and API 21+) -->
+    <style name="ParentMaterialTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- "global theme" customization -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:colorBackground">@color/colorBackground</item>
+
+        <item name="colorControlHighlight">@color/colorAccent</item>
+        <item name="colorButtonNormal">@color/colorButtonNormal</item>
+
+        <item name="colorControlNormal">@color/colorPrimary</item>
+    </style>
+
+    <!-- custom toolbar theme (because of black letters etc.) -->
+    <style name="ToolbarTheme" parent="ThemeOverlay.AppCompat.Light">
+        <!-- primary color is for toolbar title -->
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <!-- secondary color is for navigation drawer icon and overflow menu icon (3 dots) -->
+        <item name="android:textColorSecondary">@android:color/white</item>
+
+        <!-- <item name="android:actionMenuTextColor">@color/colorBackground</item> -->
+    </style>
+
+
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+</resources>

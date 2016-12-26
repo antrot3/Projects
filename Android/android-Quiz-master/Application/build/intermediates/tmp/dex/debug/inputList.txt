@@ -1,0 +1,8 @@
+C:\Users\Ante\Desktop\android-Quiz-master\Application\build\intermediates\classes\debug
+C:\Users\Ante\Desktop\android-Quiz-master\Application\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-34822df4c348d7f4989dd52160460541aed90f23.jar
+C:\Users\Ante\Desktop\android-Quiz-master\Application\build\intermediates\pre-dexed\debug\support-annotations-21.0.3-842e726a47cf6d7054941383d5160974500f7995.jar
+C:\Users\Ante\Desktop\android-Quiz-master\Application\build\intermediates\pre-dexed\debug\classes-525c70bd46c0118261a112deb19f97aed9b23bac.jar
+C:\Users\Ante\Desktop\android-Quiz-master\Application\build\intermediates\pre-dexed\debug\classes-63884cde1f48e395fd8e21ab7cddaeb652371af9.jar
+C:\Users\Ante\Desktop\android-Quiz-master\Application\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-425abd8a575c540e103c28503030183554301f35.jar
+C:\Users\Ante\Desktop\android-Quiz-master\Application\build\intermediates\pre-dexed\debug\classes-63c8c350d1574150373a3cc84209b996d8238b0c.jar
+C:\Users\Ante\Desktop\android-Quiz-master\Application\build\intermediates\pre-dexed\debug\classes-5f5cc0ef0633feef4d5c9ef56d0b53b90d14dd5e.jar

@@ -1,0 +1,83 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+
+<div ng-controller="myCntrl">
+     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+   <h1> Employee Details Page</h1>
+
+    <br />
+
+        <input type="button" class="btnAdd" value=" Add Employee" ng-click="AddEmployeeDiv()" />
+ 
+
+    <div class="divList">
+        <p class="divHead">Employee List</p>
+        <table cellpadding="12" class="table table-bordered table-hover">
+            <tr>
+                <td><b>ID</b></td>
+                <td><b>Name</b></td>
+                <td><b>Email</b></td>
+                <td><b>Age</b></td>
+                <td><b>Actions</b></td>
+            </tr>
+            <tr ng-repeat="employee in employees">
+                <td>
+                    {{employee.Id}}
+                </td>
+                <td>
+                    {{employee.name}}
+                </td>
+                <td>
+                    {{employee.email}}
+                </td>
+                <td>
+                    {{employee.Age}}
+                </td>
+                <td>
+                    <span ng-click="editEmployee(employee)" class="btnAdd">Edit</span>
+                    <span ng-click="deleteEmployee(employee)" class="btnRed">Delete</span>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div ng-show="divEmployee">
+        <p class="divHead">{{Action}} Employee</p>
+        <table>
+            <tr>
+                <td><b>Id</b></td>
+                <td>
+                    <input type="text" disabled="disabled" ng-model="employeeId" />
+                </td>
+            </tr>
+            <tr>
+                <td><b>Name</b></td>
+                <td>
+                    <input type="text" ng-model="employeeName" />
+                </td>
+            </tr>
+            <tr>
+                <td><b>Email</b></td>
+                <td>
+                    <input type="text" ng-model="employeeEmail" />
+                </td>
+            </tr>
+            <tr>
+                <td><b>Age</b></td>
+                <td>
+                    <input type="text" ng-model="employeeAge" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="button" class="btnAdd" value="Save" ng-click="AddUpdateEmployee()" />
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

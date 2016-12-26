@@ -1,0 +1,46 @@
+﻿<phone:phoneapplicationpage x:class="PhoneApp1.Page1"
+                            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                            xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+                            xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+                            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                            fontfamily="{StaticResource PhoneFontFamilyNormal}"
+                            fontsize="{StaticResource PhoneFontSizeNormal}"
+                            foreground="{StaticResource PhoneForegroundBrush}"
+                            supportedorientations="Portrait" orientation="Portrait"
+                            mc:ignorable="d"
+                            shell:systemtray.isvisible="True">
+
+    <grid x:name="LayoutRoot">
+        <grid.background>
+            <imagebrush stretch="Fill" imagesource="/Resources/test.jpg" />
+        </grid.background>
+        <grid.rowdefinitions>
+            <rowdefinition height="Auto" />
+            <rowdefinition height="*" />
+        </grid.rowdefinitions>
+
+        <image>
+
+
+        </image>
+
+
+        <!--ContentPanel - place additional content here-->
+        <grid x:name="ContentPanel" grid.row="1" margin="2,5,10,601" opacity="0.5">
+            <image name="slija" source="/Resources/ikona.png" stretch="Fill" />
+        </grid>
+
+        <textblock horizontalalignment="Left" margin="10,725,0,0" grid.row="1" textwrapping="Wrap" text="Copyright Ante Rota i Antonio Bačić" verticalalignment="Top" width="470" height="40" />
+        <textblock name="Pitanje" horizontalalignment="Left" margin="10,188,0,0" grid.row="1" textwrapping="Wrap" text="TextBlock" verticalalignment="Top" height="107" width="460" />
+        <checkbox name="cb1" content="{StaticResource LocalizedStrings}" horizontalalignment="Left" margin="0,295,0,0" grid.row="1" verticalalignment="Top" width="480" height="70" fontsize="16" />
+        <checkbox name="cb2" content="CheckBox" horizontalalignment="Left" margin="-2,370,0,0" grid.row="1" verticalalignment="Top" height="70" width="470" fontsize="16" />
+        <checkbox name="cb3" content="CheckBox" horizontalalignment="Left" margin="0,440,0,0" grid.row="1" verticalalignment="Top" fontsize="16" height="72" width="480" />
+        <checkbox name="cb4" content="CheckBox" horizontalalignment="Left" margin="0,512,0,0" grid.row="1" verticalalignment="Top" rendertransformorigin="0.03,-0.069" height="68" width="480" fontsize="16" />
+        <button content="Sljedece" horizontalalignment="Left" margin="180,585,0,0" grid.row="1" verticalalignment="Top" click="Button_Click_1" />
+
+
+    </grid>
+
+</phone:phoneapplicationpage>

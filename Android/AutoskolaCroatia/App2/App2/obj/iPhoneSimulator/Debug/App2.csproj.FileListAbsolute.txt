@@ -1,0 +1,6 @@
+C:\Users\Ante\Desktop\AutoskolaCroatia\App2\App2\bin\iPhoneSimulator\Debug\App2.exe
+C:\Users\Ante\Desktop\AutoskolaCroatia\App2\App2\bin\iPhoneSimulator\Debug\App2.pdb
+C:\Users\Ante\Desktop\AutoskolaCroatia\App2\App2\obj\iPhoneSimulator\Debug\
+C:\Users\Ante\Desktop\AutoskolaCroatia\App2\App2\obj\iPhoneSimulator\Debug\App2.csprojResolveAssemblyReference.cache
+C:\Users\Ante\Desktop\AutoskolaCroatia\App2\App2\obj\iPhoneSimulator\Debug\App2.exe
+C:\Users\Ante\Desktop\AutoskolaCroatia\App2\App2\obj\iPhoneSimulator\Debug\App2.pdb

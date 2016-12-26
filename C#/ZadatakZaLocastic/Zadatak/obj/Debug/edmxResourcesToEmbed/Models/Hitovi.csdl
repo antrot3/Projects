@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HitoviModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="HitoviEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Prijenosicas" EntityType="HitoviModel.Prijenosica" />
+    <EntitySet Name="TablicaHitovas" EntityType="HitoviModel.TablicaHitova" />
+    <AssociationSet Name="FK__Prijenosica__Id__2B0A656D" Association="HitoviModel.FK__Prijenosica__Id__2B0A656D">
+      <End Role="TablicaHitova" EntitySet="TablicaHitovas" />
+      <End Role="Prijenosica" EntitySet="Prijenosicas" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Prijenosica">
+    <Key>
+      <PropertyRef Name="PrijenosnicaId" />
+    </Key>
+    <Property Name="PrijenosnicaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Broj" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="TablicaHitova" Relationship="HitoviModel.FK__Prijenosica__Id__2B0A656D" FromRole="Prijenosica" ToRole="TablicaHitova" />
+  </EntityType>
+  <EntityType Name="TablicaHitova">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ime" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Prezime" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Adresa" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PostanskiBr" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Grad" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Drzava" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Prijenosicas" Relationship="HitoviModel.FK__Prijenosica__Id__2B0A656D" FromRole="TablicaHitova" ToRole="Prijenosica" />
+  </EntityType>
+  <Association Name="FK__Prijenosica__Id__2B0A656D">
+    <End Type="HitoviModel.TablicaHitova" Role="TablicaHitova" Multiplicity="1" />
+    <End Type="HitoviModel.Prijenosica" Role="Prijenosica" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TablicaHitova">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Prijenosica">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

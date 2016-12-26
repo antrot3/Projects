@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#64B5F6</color>
+    <color name="colorPrimaryDark">#2196F3</color>
+    <color name="colorAccent">#FF8A65</color>
+
+    <!-- <color name="colorBackground">#FAFAFA</color> -->
+    <color name="colorBackground">#E5E5E5</color>
+
+    <!-- cuz of bug, white color for tab icons to set when unselected -->
+    <color name="colorTabUnselected">@android:color/white</color>
+
+    <color name="colorButtonNormal">#B2EBF2</color>
+</resources>

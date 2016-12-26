@@ -1,0 +1,21 @@
+@charset "utf-8";
+/* CSS Document */
+
+body 
+{
+	
+}
+
+img
+{
+	margin:auto;
+}
+.navbar
+{
+	margin-bottom:0px;
+}
+
+.carousel-inner > .item > img
+{
+	width:100%;
+}

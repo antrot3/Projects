@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+    <LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:weightSum="1"
+
+    android:background="@drawable/test">
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Pitanje br x :"
+        android:id="@+id/txtbrp"
+        android:textSize="32px"
+        android:layout_gravity="center_horizontal"
+        android:textColor="#e6fcfdff" />
+
+    <ImageView
+        android:layout_width="273dp"
+        android:layout_height="130dp"
+        android:id="@+id/imageView2"
+        android:src="@drawable/logo"
+        android:alpha="0.4" />
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/scrollView" >
+
+        <LinearLayout android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="vertical"
+            android:weightSum="1"
+            >
+    <TextView
+        android:textColor="#e6fcfdff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Pitanje za milijun kuna"
+
+        android:id="@+id/txtq"
+        android:gravity="center|center_vertical" />
+
+
+
+
+    <CheckBox
+        android:textColor="#e6fcfdff"
+        android:layout_width="68dp"
+        android:layout_height="wrap_content"
+        android:text="a"
+        android:id="@+id/cb1" />
+    <CheckBox
+        android:textColor="#e6fcfdff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="b"
+        android:id="@+id/cb2" />
+
+    <CheckBox
+        android:textColor="#e6fcfdff"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="c"
+        android:id="@+id/cb3" />
+
+    <CheckBox
+        android:textColor="#e6fcfdff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="d"
+        android:id="@+id/cb4" />
+
+
+
+
+
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dalje >>"
+        android:onClick="oclicknext"
+        android:id="@+id/btnnext"
+        android:layout_gravity="center_horizontal"
+        android:alpha="0.4" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kraj"
+        android:onClick="promjenastrane5"
+        android:id="@+id/button36"
+        android:layout_gravity="center_horizontal"
+        android:alpha="0.4" />
+
+    </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

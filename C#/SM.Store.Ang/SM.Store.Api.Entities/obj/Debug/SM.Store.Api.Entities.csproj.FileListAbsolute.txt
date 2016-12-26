@@ -1,0 +1,5 @@
+D:\ante\Projekti\SM.Store.Ang\SM.Store.Api.Entities\bin\Debug\SM.Store.Api.Entities.dll
+D:\ante\Projekti\SM.Store.Ang\SM.Store.Api.Entities\bin\Debug\SM.Store.Api.Entities.pdb
+D:\ante\Projekti\SM.Store.Ang\SM.Store.Api.Entities\obj\Debug\SM.Store.Api.Entities.csprojResolveAssemblyReference.cache
+D:\ante\Projekti\SM.Store.Ang\SM.Store.Api.Entities\obj\Debug\SM.Store.Api.Entities.dll
+D:\ante\Projekti\SM.Store.Ang\SM.Store.Api.Entities\obj\Debug\SM.Store.Api.Entities.pdb

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HitoviModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Prijenosica">
+    <Key>
+      <PropertyRef Name="PrijenosnicaId" />
+    </Key>
+    <Property Name="PrijenosnicaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Broj" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TablicaHitova">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ime" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Prezime" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Adresa" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="PostanskiBr" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Grad" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Drzava" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Prijenosica__Id__4D5F7D71">
+    <End Role="TablicaHitova" Type="Self.TablicaHitova" Multiplicity="1" />
+    <End Role="Prijenosica" Type="Self.Prijenosica" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TablicaHitova">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Prijenosica">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="HitoviModelStoreContainer">
+    <EntitySet Name="Prijenosica" EntityType="Self.Prijenosica" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TablicaHitova" EntityType="Self.TablicaHitova" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Prijenosica__Id__4D5F7D71" Association="Self.FK__Prijenosica__Id__4D5F7D71">
+      <End Role="TablicaHitova" EntitySet="TablicaHitova" />
+      <End Role="Prijenosica" EntitySet="Prijenosica" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

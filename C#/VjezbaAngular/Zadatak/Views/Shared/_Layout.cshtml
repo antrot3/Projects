@@ -1,0 +1,33 @@
+﻿@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html >
+<html ng-app="crudModule">
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/angular-route.js"></script>
+    <script src="~/Scripts/angular-resource.js"></script>
+    <script src="~/MojeSkripte/Module.js"></script>
+
+    <script src="~/MojeSkripte/Service.js"></script>
+    <script src="~/MojeSkripte/Controller.js"></script>
+    <script src="~/MojeSkripte/ControllerDetalji.js"></script>
+   
+</head>
+<body>
+
+    
+    @RenderBody()
+    <hr />
+    <footer></footer>
+    
+</body>
+</html>
+

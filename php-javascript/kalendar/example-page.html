@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/dateTimePicker.css">
+  </head>
+  <body>
+    <div class="container">
+      <h2>Basic Inline Calendar</h2>
+      <div class="row">
+        <div class="col-xss-4">
+          <div id="basic" data-toggle="calendar"></div>
+        </div>
+        <div class="col-xss-8">
+          <pre>$('[data-toggle=calendar]').calendar();</pre>
+        </div>
+      </div>
+      <hr>
+      <h2>Recurring unavailable dates</h2>
+      <div class="row">
+        <div class="col-xss-4">
+          <div id="glob-data" data-toggle="calendar"></div>
+        </div>
+        <div class="col-xss-8">
+          <pre>$('[data-toggle=calendar]').calendar({
+          unavailable: ['*-*-8', '*-*-10']
+});				
+			</pre>
+        </div>
+      </div>
+      <hr>
+      <h2>First Day = Tuesday</h2>
+      <div class="row">
+        <div class="col-xss-4">
+          <div id="custom-first-day" data-toggle="calendar"></div>
+        </div>
+        <div class="col-xss-8">
+          <pre>$('[data-toggle=calendar]').calendar({
+          day_first: 2,
+          unavailable: ['2014-07-10']
+});				
+			</pre>
+        </div>
+      </div>
+      <hr>
+      <h2>Custom day names, month names (Vietnamese)</h2>
+      <div class="row">
+        <div class="col-xss-4">
+          <div id="custom-name" data-toggle="calendar"></div>
+        </div>
+        <div class="col-xss-8">
+          <pre>$('[data-toggle=calendar]').calendar({
+          day_name: ['CN', 'Hai', 'Ba', 'Tư', 'Năm', 'Sáu', 'Bảy'],
+          month_name: ['Tháng Một', 'Tháng Hai', 'Tháng Ba', 'Tháng Tư', 'Tháng Năm', 'Tháng Sáu', 'Tháng Bảy', 'Tháng Tám', 'Tháng Chín', 'Tháng Mười', 'Tháng Mười Một', 'Tháng Mười Hai'],
+          unavailable: ['2014-07-10']
+});				
+			</pre>
+        </div>
+      </div>
+      <hr>
+      <h2>3 months with recurring unavailable dates</h2>
+      <div class="row">
+        <div class="col-xss-12">
+          <div id="show-next-month" data-toggle="calendar"></div>
+        </div>
+        <div class="col-xss-12">
+          <pre>$('[data-toggle=calendar]').calendar({
+          num_next_month: 1,
+          num_prev_month: 1,
+          unavailable: ['*-*-8', '*-*-10']
+});				
+			</pre>
+        </div>
+      </div>
+      
+  </div>
+    <script type="text/javascript" src="scripts/components/jquery.min.js"></script>
+    <script type="text/javascript" src="scripts/dateTimePicker.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function()
+    {
+      $('#basic').calendar();
+      $('#glob-data').calendar(
+      {
+        unavailable: ['*-*-8', '*-*-10']
+      });
+      $('#custom-first-day').calendar(
+      {
+        day_first: 2,
+        unavailable: ['2014-07-10'],
+        onSelectDate: function(date, month, year)
+        {
+          alert([year, month, date].join('-') + ' is: ' + this.isAvailable(date, month, year));
+        }
+      });
+      $('#custom-name').calendar(
+      {
+        day_name: ['CN', 'Hai', 'Ba', 'Tư', 'Năm', 'Sáu', 'Bảy'],
+        month_name: ['Tháng Một', 'Tháng Hai', 'Tháng Ba', 'Tháng Tư', 'Tháng Năm', 'Tháng Sáu', 'Tháng Bảy', 'Tháng Tám', 'Tháng Chín', 'Tháng Mười', 'Tháng Mười Một', 'Tháng Mười Hai'],
+        unavailable: ['2014-07-10']
+      });
+      $('#dynamic-data').calendar(
+      {
+        adapter: 'http://localhost/2014/jquery-availability-calendar/src/server/adapter.php'
+      });
+      $('#show-next-month').calendar(
+      {
+        num_next_month: 1,
+        num_prev_month: 1,
+        unavailable: ['*-*-9', '*-*-10']
+      });
+    });
+    </script>
+  </body>
+</html>

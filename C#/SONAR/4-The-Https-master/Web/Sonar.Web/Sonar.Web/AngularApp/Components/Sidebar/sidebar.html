@@ -1,0 +1,34 @@
+﻿<div>
+    <h3>
+        Welcome, {{vm.User.FirstName}}! <br />
+    </h3>
+
+    <p>
+        Click on a place on map to add event to it and emit it to other people nearby.
+    </p>
+
+    <h4>Here are some of your friends:</h4>
+    <span ng-repeat="friend in vm.Friends">
+        <h5 class="smallHeading">
+            {{friend.FirstName}} {{friend.LastName}}
+            <a class="bigArrow" href="#/profile/{{friend.Id}}">--></a>
+            <br />
+        </h5>
+    </span>
+    <a href="#/friends">See more...</a>
+
+
+    <h4>And here are some of your events:</h4>
+    <span ng-repeat="event in vm.Events">
+        <h5 class="smallHeading">
+            {{event.Name}}
+            <a class="bigArrow" href="#/events">--></a>
+        </h5>
+        <small>
+            {{event.Description}} - {{event.Town}}
+        </small>
+        <br />
+    </span>
+    <a href="#/events">See more...</a>
+
+</div>

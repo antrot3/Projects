@@ -1,0 +1,5 @@
+.product-group, .product-group h3, .product-group h3 a { font-family: "Trebuchet MS", "Helvetica Neue", "Helvetica", sans-serif; } 
+.product-group h3 { margin: 40px 0 0 0;  padding: 10px 0 5px 10px; } 
+.product-jump { line-height: 1.5; display: block; padding: 10px 0; width: 160px; text-align: center; border: 1px solid #ccc; float: left; margin: 0 10px 10px 0; }
+.product-jump:hover { text-decoration: none; background: #eee; }
+.product-jump .product-title { display: block; font-size: 16px; color: #333; }

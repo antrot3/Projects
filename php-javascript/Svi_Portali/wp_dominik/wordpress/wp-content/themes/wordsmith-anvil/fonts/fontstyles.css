@@ -1,0 +1,49 @@
+/* The font styles for all the added fonts */
+
+@font-face {
+    font-family: 'GarogierRegular';
+    src: url('Garogier_unhinted-webfont.eot');
+    src: url('Garogier_unhinted-webfont.eot?iefix') format('eot'),
+         url('Garogier_unhinted-webfont.woff') format('woff'),
+         url('Garogier_unhinted-webfont.ttf') format('truetype'),
+         url('Garogier_unhinted-webfont.svg#webfontPsdZKzU3') format('svg');
+    font-weight: all;
+    font-style: all;
+
+}
+
+@font-face {
+    font-family: 'EBGaramondRegular';
+    src: url('EBGaramond-webfont.eot');
+    src: url('EBGaramond-webfont.eot?#iefix') format('eot'),
+         url('EBGaramond-webfont.woff') format('woff'),
+         url('EBGaramond-webfont.ttf') format('truetype'),
+         url('EBGaramond-webfont.svg#webfontEhInBfJ1') format('svg');
+    font-weight: all;
+    font-style: all;
+
+}
+
+@font-face {
+    font-family: 'EBGaramondSC';
+    src: url('EBGaramondSC-webfont.eot');
+    src: url('EBGaramondSC-webfont.eot?#iefix') format('eot'),
+         url('EBGaramondSC-webfont.woff') format('woff'),
+         url('EBGaramondSC-webfont.ttf') format('truetype'),
+         url('EBGaramondSC-webfont.svg#webfontPdg3xrkJ') format('svg');
+    font-weight: all;
+    font-style: all;
+
+}
+
+@font-face {
+    font-family: 'SearsTowerRegular';
+    src: url('Sears_Tower-webfont.eot');
+    src: url('Sears_Tower-webfont.eot?#iefix') format('embedded-opentype'),
+         url('Sears_Tower-webfont.woff') format('woff'),
+         url('Sears_Tower-webfont.ttf') format('truetype'),
+         url('Sears_Tower-webfont.svg#SearsTowerRegular') format('svg');
+    font-weight: all;
+    font-style: all;
+
+}

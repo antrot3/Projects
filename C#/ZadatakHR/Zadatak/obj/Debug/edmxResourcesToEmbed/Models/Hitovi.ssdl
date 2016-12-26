@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HitoviModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Playlista">
+    <Key>
+      <PropertyRef Name="Idplaylista" />
+    </Key>
+    <Property Name="Idplaylista" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ime" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Prijenosica">
+    <Key>
+      <PropertyRef Name="PrijenosnicaId" />
+    </Key>
+    <Property Name="PrijenosnicaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Idplaylista" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TablicaHitova">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Ime" Type="nvarchar" MaxLength="50" />
+    <Property Name="Izvodac" Type="nvarchar" MaxLength="50" />
+    <Property Name="url" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Prijenosi__Idpla__208CD6FA">
+    <End Role="Playlista" Type="Self.Playlista" Multiplicity="1" />
+    <End Role="Prijenosica" Type="Self.Prijenosica" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Playlista">
+        <PropertyRef Name="Idplaylista" />
+      </Principal>
+      <Dependent Role="Prijenosica">
+        <PropertyRef Name="Idplaylista" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Prijenosica__Id__1F98B2C1">
+    <End Role="TablicaHitova" Type="Self.TablicaHitova" Multiplicity="1" />
+    <End Role="Prijenosica" Type="Self.Prijenosica" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TablicaHitova">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Prijenosica">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="HitoviModelStoreContainer">
+    <EntitySet Name="Playlista" EntityType="Self.Playlista" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Prijenosica" EntityType="Self.Prijenosica" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TablicaHitova" EntityType="Self.TablicaHitova" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Prijenosi__Idpla__208CD6FA" Association="Self.FK__Prijenosi__Idpla__208CD6FA">
+      <End Role="Playlista" EntitySet="Playlista" />
+      <End Role="Prijenosica" EntitySet="Prijenosica" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Prijenosica__Id__1F98B2C1" Association="Self.FK__Prijenosica__Id__1F98B2C1">
+      <End Role="TablicaHitova" EntitySet="TablicaHitova" />
+      <End Role="Prijenosica" EntitySet="Prijenosica" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

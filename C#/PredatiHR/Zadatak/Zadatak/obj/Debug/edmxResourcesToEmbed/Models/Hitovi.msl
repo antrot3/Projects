@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HitoviModelStoreContainer" CdmEntityContainer="HitoviEntities1">
+    <EntitySetMapping Name="TablicaHitovas">
+      <EntityTypeMapping TypeName="HitoviModel.TablicaHitova">
+        <MappingFragment StoreEntitySet="TablicaHitova">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Ime" ColumnName="Ime" />
+          <ScalarProperty Name="Izvodac" ColumnName="Izvodac" />
+          <ScalarProperty Name="url" ColumnName="url" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Playlistas">
+      <EntityTypeMapping TypeName="HitoviModel.Playlista">
+        <MappingFragment StoreEntitySet="Playlista">
+          <ScalarProperty Name="Idplaylista" ColumnName="Idplaylista" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Prijenosicas">
+      <EntityTypeMapping TypeName="HitoviModel.Prijenosica">
+        <MappingFragment StoreEntitySet="Prijenosica">
+          <ScalarProperty Name="Idplaylista" ColumnName="Idplaylista" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="PrijenosnicaID" ColumnName="PrijenosnicaId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

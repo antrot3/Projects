@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\Ante\Desktop\android-Quiz-master\Application\build\intermediates\exploded-aar\com.android.support\support-v13\21.0.3\libs\internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="0dcc55e70f7ebf7238fe2ec53f662eb378ab2668">
+        <dex dex="C:\Users\Ante\Desktop\android-Quiz-master\Application\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-34822df4c348d7f4989dd52160460541aed90f23.jar" />
+    </item>
+    <item
+        jar="C:\Users\Ante\Desktop\android-Quiz-master\Application\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\6.5.87\classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="95482e7c792a7c0d5a9d5461e97726bd54fe9549">
+        <dex dex="C:\Users\Ante\Desktop\android-Quiz-master\Application\build\intermediates\pre-dexed\debug\classes-5f5cc0ef0633feef4d5c9ef56d0b53b90d14dd5e.jar" />
+    </item>
+    <item
+        jar="C:\Users\Ante\Desktop\android-Quiz-master\Application\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\libs\internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="C:\Users\Ante\Desktop\android-Quiz-master\Application\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-425abd8a575c540e103c28503030183554301f35.jar" />
+    </item>
+    <item
+        jar="C:\Users\Ante\Desktop\android-Quiz-master\Application\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="C:\Users\Ante\Desktop\android-Quiz-master\Application\build\intermediates\pre-dexed\debug\classes-63c8c350d1574150373a3cc84209b996d8238b0c.jar" />
+    </item>
+    <item
+        jar="C:\Users\Ante\Desktop\android-Quiz-master\Application\build\intermediates\exploded-aar\com.android.support\support-v13\21.0.3\classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="2c2071dcaf7a008c3b01a6381a33be55396bab09">
+        <dex dex="C:\Users\Ante\Desktop\android-Quiz-master\Application\build\intermediates\pre-dexed\debug\classes-525c70bd46c0118261a112deb19f97aed9b23bac.jar" />
+    </item>
+    <item
+        jar="C:\Users\Ante\Desktop\android-Quiz-master\Application\build\intermediates\exploded-aar\com.google.android.gms\play-services-wearable\6.5.87\classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="6384c6cd674a22610b932d9464aa6938d067f285">
+        <dex dex="C:\Users\Ante\Desktop\android-Quiz-master\Application\build\intermediates\pre-dexed\debug\classes-63884cde1f48e395fd8e21ab7cddaeb652371af9.jar" />
+    </item>
+    <item
+        jar="C:\Users\Ante\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\21.0.3\support-annotations-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
+        <dex dex="C:\Users\Ante\Desktop\android-Quiz-master\Application\build\intermediates\pre-dexed\debug\support-annotations-21.0.3-842e726a47cf6d7054941383d5160974500f7995.jar" />
+    </item>
+
+</items>

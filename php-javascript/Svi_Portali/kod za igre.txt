@@ -1,0 +1,6 @@
+<object width="700" height="500">
+
+<param name="movie" value="http://static.igre.hr/games/game_2632/giftrush.swf">
+<embed src="http://static.igre.hr/games/game_2632/giftrush.swf" width="700" height="500">
+</embed>
+</object>

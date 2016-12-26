@@ -1,0 +1,122 @@
+﻿<html ng-app="crudModule">
+@{
+    ViewBag.Title = "Playlista";
+}
+
+
+
+<head>
+    <title></title>
+    <base href="/">
+    <style type="text/css">
+        #tblContainer, #tblcollections, #tblCRUD, td {
+            border: double;
+        }
+
+        th {
+            background-color: darkgray;
+        }
+
+        #dvcollection {
+            height: 500px;
+            overflow-y: scroll;
+        }
+    </style>
+</head>
+
+<body>
+<h2>Hello</h2>
+
+<table id="tblcontainer" ng-controller="crudController">
+    <tbody>
+        <tr>
+            <td>
+                Za uređivanje kliknit na pismu
+
+                <table class="CSSTableGenerator" id="tblcrud">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <span>Id</span>
+                            </td>
+                            <td>
+                                <input type="text" id="mID" ng-model="Id">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>Ime</span>
+                            </td>
+                            <td>
+                                <input type="text" id="mIme" required="" ng-model="Ime">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>Izvodac</span>
+                            </td>
+                            <td>
+                                <input type="text" id="mIzvodac" required="" ng-model="Izvodac">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>Url</span>
+                            </td>
+                            <td>
+                                <input type="text" id="mUrl" required="" ng-model="url">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <input type="button" id="new" value="New" ng-click="clear()">
+                            </td>
+                            <td>
+                                <input type="button" id="save" value="Save" save"" ng-click="save()">
+                                <input type="button" id="delete" value="delete" ng-click="delete()">
+
+                            </td>
+
+                        </tr>
+                    </tbody>
+                </table>
+                <div>{{Message}}</div>
+            </td>
+            <td>
+                <div id="dvcollection">
+                    <div><label>Search </label><input type="text" ng-model="search" /></div>
+                    <table class="CSSTableGenerator" id="tblcollections">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Ime</th>
+                                <th>Izvodac</th>
+                                <th>Url</th>
+
+                            </tr>
+                        </thead>
+                        <tbody ng-repeat="muz in TablicaHitovas|filter:search">
+                            <tr ng-click="get(muz)">
+                                <td>
+                                    <a href="#/Muzika/{{muz.Id}}" class="thumb"></a>
+                                    <a href="#/Muzika/{{muz.Id}}">{{muz.Id}}</a>
+                                </td>
+                                <td> <span>{{muz.Ime}}</span></td>
+                                <td> <span>{{muz.Izvodac}}</span></td>
+                                <td> <span>{{muz.url}}</span></td>
+                                <td> <input type="checkbox" ng-model="muz.id" /></td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                    <div><a href="#/Index">Na index</a></div>
+                    <div><a href="#/Muzika/Playlista.cshtml">Na Playlistu</a></div>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+    </body>
+</html>
+

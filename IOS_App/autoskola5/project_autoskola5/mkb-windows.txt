@@ -1,0 +1,1 @@
+VC12X;build_autoskola5_vc12x;

@@ -1,0 +1,48 @@
+﻿<p>Your friends</p>
+<div>
+    <div class="col-xs-8">
+
+        <div class="row" ng-repeat="friend in friends " style="background-color: white;">
+            <span class="col-xs-4">
+                <img src="{{friend.ImageUrl}}" />
+            </span>
+            <span class="col-xs-6">
+                <a href="#/profile/{{friend.Id}}">
+                    <span>{{friend.FirstName}}</span>
+                    <span> {{friend.LastName}}</span>
+                </a>
+
+                <br />
+
+                <span>{{friend.Username}}</span>
+                <span>{{friend.Email}}</span>
+                <br />
+
+                <span>{{friend.BirthDate}}</span>
+                <span> {{friend.Rating}}</span>
+
+            </span>
+        </div>
+        <div class="row" ng-repeat="person in people " style="background-color: white; border-left-color:aquamarine; border-left-width:2px;">
+            <span class="col-xs-4">
+                <img src="{{person.ImageUrl}}" />
+            </span>
+            <span class="col-xs-6">
+                <a href="#/profile/{{person.Id}}">
+                    <span>{{person.FirstName}}</span>
+                    <span> {{person.LastName}}</span>
+                </a>
+
+                <br />
+
+                <span>{{person.Username}}</span>
+                <span>{{person.Email}}</span>
+                <br />
+
+                <span>{{person.BirthDate}}</span>
+                <span> {{person.Rating}}</span>
+
+            </span>
+        </div>
+    </div>
+</div>

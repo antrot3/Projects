@@ -1,0 +1,5 @@
+C:\Users\Ante\Desktop\AutoskolaCroatia\App3\App3\bin\iPhoneSimulator\Debug\App3.exe
+C:\Users\Ante\Desktop\AutoskolaCroatia\App3\App3\bin\iPhoneSimulator\Debug\App3.pdb
+C:\Users\Ante\Desktop\AutoskolaCroatia\App3\App3\obj\iPhoneSimulator\Debug\
+C:\Users\Ante\Desktop\AutoskolaCroatia\App3\App3\obj\iPhoneSimulator\Debug\App3.exe
+C:\Users\Ante\Desktop\AutoskolaCroatia\App3\App3\obj\iPhoneSimulator\Debug\App3.pdb

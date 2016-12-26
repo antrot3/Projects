@@ -1,0 +1,37 @@
+/* 
+Credits: Bit Repository
+CSS Library: http://www.bitrepositiry.com/
+*/
+
+html, body  { padding: 0; border: 0px none; }
+
+.notification_error
+{
+    border: 1px solid #A25965;
+    height: auto;
+    width: 90%;
+    margin: 15px 0;
+    padding: 4px;
+    background: #F8F0F1;
+    text-align: left;
+    -moz-border-radius: 5px;
+}
+
+.notification_ok
+{
+    border: 1px #567397 solid;
+    height: auto;
+    width: 90%;
+    margin: 15px 0;
+    padding: 8px;
+    background: #f5f9fd;
+    text-align: center;
+    -moz-border-radius: 5px;
+}
+
+/* Label */
+label  { font-size:15px !important; width: 116px; padding-left: 20px; margin: 5px; float: left; text-align: left; }
+
+/* BR */
+
+br { clear: left; }

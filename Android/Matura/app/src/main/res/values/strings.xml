@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Autoskola2</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_activiry2">Activiry2</string>
+    <string name="title_activity_activity2">activity2</string>
+    <string name="title_activity_onama">onama</string>
+    <string name="title_activity_pitanja">Pitanja</string>
+    <string name="title_activity_rezultati">rezultati</string>
+    <string name="title_activity_pitanaj2">pitanaj2</string>
+    <string name="title_activity_pitanja2">pitanja2</string>
+</resources>

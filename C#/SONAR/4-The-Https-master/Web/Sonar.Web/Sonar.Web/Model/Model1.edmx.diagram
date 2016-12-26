@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6cefd5fb29e246e2b92350fb02aadf5f" Name="Diagram1">
+        <EntityTypeShape EntityType="hackathon_shift_2016_testModel.Comment" Width="1.5" PointX="5.25" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="hackathon_shift_2016_testModel.Event" Width="1.5" PointX="8.25" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="hackathon_shift_2016_testModel.EventPerson" Width="1.5" PointX="10.5" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="hackathon_shift_2016_testModel.EventState" Width="1.5" PointX="6" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="hackathon_shift_2016_testModel.EventSubscription" Width="1.5" PointX="5.25" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="hackathon_shift_2016_testModel.EventType" Width="1.5" PointX="3" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="hackathon_shift_2016_testModel.Person" Width="1.5" PointX="3" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="hackathon_shift_2016_testModel.PersonSubscription" Width="1.5" PointX="5.5" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="hackathon_shift_2016_testModel.PersonType" Width="1.5" PointX="0.75" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="hackathon_shift_2016_testModel.SotialNetwork" Width="1.5" PointX="5.25" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="hackathon_shift_2016_testModel.Town" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="hackathon_shift_2016_testModel.Comment_EventID_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="hackathon_shift_2016_testModel.Comment_PersonID_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="hackathon_shift_2016_testModel.Event_AuthorID_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="hackathon_shift_2016_testModel.Event_EventTypeID_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="hackathon_shift_2016_testModel.Event_StateID_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="hackathon_shift_2016_testModel.Event_TownID_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="hackathon_shift_2016_testModel.EventPerson_EventID_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="hackathon_shift_2016_testModel.EventPerson_PersonID_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="hackathon_shift_2016_testModel.EventSubscription_EventTypeID_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="hackathon_shift_2016_testModel.EventSubscription_PersonID_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="hackathon_shift_2016_testModel.EventSubscription_TownID_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="hackathon_shift_2016_testModel.Person_PersonTypeID_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="hackathon_shift_2016_testModel.PersonSubscription_PublisherID_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="hackathon_shift_2016_testModel.PersonSubscription_SubscriberID_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="hackathon_shift_2016_testModel.SotialNetwork_PersonID_FK" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

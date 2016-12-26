@@ -1,0 +1,346 @@
+<!DOCTYPE HTML>
+
+
+
+<html>
+<head>
+<style type="text/css">
+.dropdown p {
+	
+    position: relative;
+    overflow: hidden;
+    width: 152px; /* width minus 24 */
+	text-indent: 0.01px;
+	text-overflow: "";
+}
+.strelica {
+	border-radius: 25px;
+	font-size: 20px;
+	border: none;
+	width: 195px;
+	-webkit-appearance: none;
+	text-indent: 0.01px;
+	text-overflow: "";
+	background: url('strelica.png') no-repeat;
+	background-position: 155px 0px; /* width minus 48 */
+	background-color: rgba(0,102,204,0.2);
+	border: solid rgba(0,0,153, 0.4);
+}
+
+</style>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+<meta property="og:title" content="znanost" />
+<meta property="og:description" 
+  content="igre, flash igre, portal, portali, svi portali, vijesti, vijesti hrvatska, vijesti iz hrvatske, sport, vijesti iz sporta, novosti, novosti sport, novosti iz sporta, znanost, portal sport, vijesti iz znanosti, vijesti iz sporta, novosti iz znanosti, novosti znanost, tehnologija, vijesti iz tehnologije, portal tehnologije, portal auta, portal motora, portal auto moto, vijest auta, vijesti motora, novosti auta, novosti motori, portal automobila, novosti automobila, vijesti automobila, portal glazbe, novosti glazba, portal filmovi, novosti filmovi, vijesti filmovi, vijesti glazba, portal moda, novosti moda, vijesti moda, portal igara, novosti igara, vijesti igara" />
+
+<meta name="description" content="igre, flash igre, portal, portali, svi portali, vijesti, vijesti hrvatska, vijesti iz hrvatske, sport, vijesti iz sporta, novosti, novosti sport, novosti iz sporta, znanost, portal sport, vijesti iz znanosti, vijesti iz sporta, novosti iz znanosti, novosti znanost, tehnologija, vijesti iz tehnologije, portal tehnologije, portal auta, portal motora, portal auto moto, vijest auta, vijesti motora, novosti auta, novosti motori, portal automobila, novosti automobila, vijesti automobila, portal glazbe, novosti glazba, portal filmovi, novosti filmovi, vijesti filmovi, vijesti glazba, portal moda, novosti moda, vijesti moda, portal igara, novosti igara, vijesti igara">
+
+<title>Svi portali</title>
+
+</script>
+
+<script>
+function showRSS(str)
+{
+if (str.length==0)
+  {
+  document.getElementById("rssOutput").innerHTML="";
+  return;
+  }
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+    document.getElementById("rssOutput").innerHTML=xmlhttp.responseText;
+    }
+  }
+xmlhttp.open("GET","nautika1.php?q="+str,true);
+xmlhttp.send();
+}
+</script>
+
+
+<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700|Cookie' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="scripts/jquery.carouFredSel-5.5.2.js" type="text/javascript"></script>
+<script type="text/javascript" src="scripts/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="scripts/jquery.form.js"></script> 
+<script type="text/javascript" src="scripts/scripts.js"></script> 
+</head>
+
+
+<body>
+<div class="wrapper">
+	<div id="top">
+        <div id="logo">
+            <img id="logoimage" src="images/logo.png" alt="logo">	<!-- Logo image -->
+            <h1 id="logotitle">Svi portali</h1>	<!-- Logo text -->
+        </div><!--/logo-->
+    
+        <nav>	<!-- Navigation Start -->
+            <ul>
+            	<li><a href="index.html">Index</a></li>
+                <li><a href="novosti.html">novosti</a></li>
+                <li><a href="#kontakt.html">kontakt</a></li>
+                <li><a href="podstr.html">pod-str</a></li>
+            </ul>      
+        </nav>	<!-- Navigation End -->
+    </div><!--/top-->
+    
+    
+    <hr/><!-- Horizontal Line -->
+    
+    
+    <header>	<!-- Header Title Start -->
+    	<h1>Dobrodošli na našu web stranicu<span></span>.</h1>
+        <h2>&ndash;copyright© sviportali.eu &ndash;</h2>
+    </header>	<!-- Header Title End -->
+    <section id="slideshow">	<!-- Slideshow Start -->
+        <div class="html_carousel">
+			<div id="slider">
+            
+				<div class="slide">
+					<img src="images/slideshow/sliderimage1.jpg" width="3000" height="783" alt="image 1"/><!-- Replace these images with your own but make sure they are 3000px wide and 783px high or the same ration -->
+				</div><!--/slide-->
+                
+				<div class="slide">
+					<img src="images/slideshow/sliderimage2.jpg" width="3000" height="783" alt="image 2"/><!-- Replace these images with your own but make sure they are 3000px wide and 783px high or the same ration -->
+				</div><!--/slide-->
+                
+                <div class="slide">
+					<img src="images/slideshow/sliderimage3.jpg" width="3000" height="783" alt="image 3"/><!-- Replace these images with your own but make sure they are 3000px wide and 783px high or the same ration -->
+				</div><!--/slide-->
+                
+			</div><!--/slider-->
+			<div class="clearfix"></div>
+		</div><!--/html_carousel-->
+    </section>	<!-- Slideshow End -->
+    
+    
+    
+    
+    
+  <div class="clearfix"></div> <!-- Text Section End -->
+    
+    
+    <section id="work"> 
+  <h3 align="center" class="social">Nautika</h3>
+  </br>
+  <p align="center">U ovom dijelu možete pronaću sve nove vijesti vezane za nautiku sa svih podržanih portala.</br>
+Odaberite portal u izborniku ispod te će se s njga izlistati sve najnovije vijesti.</p>
+  </br>
+  <div>
+  <div class="dropdown">
+    <select name="select" onChange="showRSS(this.value)" class="strelica" >
+      <option value="">Odaberite portal:</option>
+      <option value="burzanautike">burzanautike</option>
+    </select>
+    </div>
+    <br>
+    <br />
+    <div id="rssOutput">
+      <div> Vijesti &#263;e biti prikazane ovdje: </div>
+    </div>
+  </div>
+</div>
+        </form>
+          &nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>
+        <!-- Work Links Section Start -->
+      </p>
+      <section id="work">
+            <hr>
+      <p>&nbsp;</p>
+        <div class="item"> <a href="vijesti.html"><img src="images/work/thumbs/vijesti.png" alt="image 1"></a>
+          <!-- Image must be 400px by 300px -->
+          <h3>Vijesti</h3>
+          <!--Title-->
+          <p>sve vijesti</p>
+          <!--Category-->
+        </div>
+        <!--/item-->
+        <div class="item"> <a href="sport.html"><img src="images/work/thumbs/sport.png" alt="image 2"></a>
+          <!-- Image must be 400px by 300px -->
+          <h3>Sport</h3>
+          <!--Title-->
+          <p>sve iz sporta</p>
+          <!--Category-->
+        </div>
+        <!--/item-->
+        <div class="item"> <a href="znanost.html"><img src="images/work/thumbs/znanost.png" alt="image 3"></a>
+          <!-- Image must be 400px by 300px -->
+          <h3>Znanost</h3>
+          <!--Title-->
+          <p>sve vezano za znanost</p>
+          <!--Category-->
+        </div>
+        <!--/item-->
+        <div class="item"> <a href="tehnologija.html"><img src="images/work/thumbs/tehnologija.png" alt="image 4"></a>
+          <!-- Image must be 400px by 300px -->
+          <h3>Tehnologija</h3>
+          <!--Title-->
+          <p>sve vezano za tehnologiju</p>
+          <!--Category-->
+        </div>
+        <!--/item-->
+        <div class="item"> <a href="automoto.html"><img src="images/work/thumbs/automoto.png" alt="image 5"></a>
+          <!-- Image must be 400px by 300px -->
+          <h3>Auto-moto</h3>
+          <!--Title-->
+          <p>sve vezano za auto-moto</p>
+          <!--Category-->
+        </div>
+        <!--/item-->
+        <div class="item"> <a href="glazba.html"><img src="images/work/thumbs/glazba.png" alt="image 6"></a>
+          <!-- Image must be 400px by 300px -->
+          <h3>Glazba</h3>
+          <!--Title-->
+          <p>sve vezano uz glazbu</p>
+          <!--Category-->
+        </div>
+        <!--/item-->
+        <div class="item"> <a href="film.html"><img src="images/work/thumbs/film.png" alt="image 7"></a>
+          <!-- Image must be 400px by 300px -->
+          <h3>Film</h3>
+          <!--Title-->
+          <p>sve vezano uz film</p>
+          <!--Category-->
+        </div>
+        <!--/item-->
+        <div class="item"> <a href="moda.html"><img src="images/work/thumbs/moda.png" alt="image 8"></a>
+          <!-- Image must be 400px by 300px -->
+          <h3>Moda</h3>
+          <!--Title-->
+          <p>sve vezano uz modu</p>
+          <!--Category-->
+        </div>
+        <!--/item-->
+        <div class="item"> <a href="igre.html"><img src="images/work/thumbs/igre.png" alt="image 9"></a>
+          <!-- Image must be 400px by 300px -->
+          <h3>Igre</h3>
+          <!--Title-->
+          <p>sve vezano uz igre</p>
+          <!--Category-->
+        </div>
+        <div class="item"> <a href="nautica.html"><img src="images/work/thumbs/nautika.png" alt="image 9"></a>
+          <!-- Image must be 400px by 300px -->
+          <h3>Nautika</h3>
+          <!--Title-->
+          <p>sve vezano uz nautiku</p>
+          <!--Category-->
+        </div>
+        <div class="item"> <a href="medicina.html"><img src="images/work/thumbs/medicina.png" alt="image 9"></a>
+          <!-- Image must be 400px by 300px -->
+          <h3>Zdravlje</h3>
+          <!--Title-->
+          <p>sve vezano uz zdravlje</p>
+          <!--Category-->
+        </div>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>  <br><br><br><br><br><hr/></p>
+        <div class="item"> <a href="../index.html"><img src="images/work/thumbs/index.png" alt="image 5"></a>
+          <!-- Image must be 400px by 300px -->
+          <h3>Poćetna</h3>
+          <!--Title-->
+          <p>Poćetna stranica</p>
+          <!--Category-->
+        </div>
+        <div class="item"> <a href="igre/igre.php"><img src="images/work/thumbs/flashigre.png" alt="image 5"></a>
+          <!-- Image must be 400px by 300px -->
+          <h3>Flash igre</h3>
+          <!--Title-->
+          <p>Flash igre</p>
+          <!--Category-->
+        </div>
+        <div class="item"> <a href="yugioh.html"><img src="images/work/thumbs/yugioh.png" alt="image 5"></a>
+          <!-- Image must be 400px by 300px -->
+          <h3>yu-gi-oh</h3>
+          <!--Title-->
+          <p>yu-gi-oh</p>
+          <!--Category-->
+        </div>
+        <!--/item--><!--/item-->
+</section>
+        
+        
+        
+      <div class="clearfix"><!-- Work Links Section End -->    </div>
+    <section id="bottom"> <!-- Last Words Section Start -->
+   	  <h3>&nbsp;</h3>
+</section><!-- Last Words Section End-->
+</div>
+
+<iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fsviportali.eu&amp;width&amp;layout=standard&amp;action=like&amp;show_faces=true&amp;share=true&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:80px;" allowTransparency="true">&nbsp;&nbsp;</iframe>
+
+<br>
+<br>
+<div id="reklame_free" align="right">zanimljivi linkovi: <a href="http://xdigre.com/">&nbsp;&nbsp;http://xdigre.com/</a></div>
+
+<!-- TO MAKE THE PHP FORM WORK, ALL YOU NEED TO DO IS OPEN UP THE FILE CALLED 'submitemail.php' AND CHANGE WHERE IT SAYS 'your email goes here' -->
+
+<!-- DON'T TOUCH THIS SECTION -->
+
+<footer id="footer">
+	<div class="wrapper">
+    	<section class="left">
+    	<h4>Kontakt</h4>
+            <div id="formwrap">
+                <form method="post" id="submitform" action="submitemail.php" >
+                            <input type="text" class="formstyle" title="ime" name="name" />
+                            <input type="text" class="formstyle" title="e-mail" name="email" />
+                            <textarea name="message" title="poruka"></textarea>
+                            <input class="formstyletwo" type="submit" value="pošalji">  
+                </form>
+            </div>
+            <div id="error"></div>
+        </section>
+
+<!-- DON'T TOUCH THIS SECTION END -->        
+        
+   	  <section class="right social"> <!-- Social Icons Start -->
+		<a href="http://google.com"><img class="icon" src="images/icons/google.png" width="32" height="32" alt="google"></a><!-- Replace with any 32px x 32px icons -->
+        <a href="http://youtube.com"><img class="icon" src="images/icons/youtube.png" width="32" height="32" alt="youtube"></a><!-- Replace with any 32px x 32px icons -->
+        <a href="https://www.facebook.com/sviportali.eu"><img class="icon" src="images/icons/facebook.png" width="32" height="32" alt="facebook"></a><!-- Replace with any 32px x 32px icons --><!-- Replace with any 32px x 32px icons -->
+      </section>
+<br>
+    	<!-- Social Icons End --><!-- Social Icons End -->
+    </div>
+    <div class="clearfix"></div>
+</footer>
+
+<!-- SLIDESHOW SCRIPT START -->
+<script type="text/javascript">
+$("#slider").carouFredSel({
+	responsive	: true,
+	scroll		: {
+		fx			: "crossfade",
+		easing		: "swing",
+		duration	: 1000,
+		
+	},
+	items		: {
+		visible		: 1,
+		height		: "27%"
+	}
+});
+</script>
+<!-- SLIDESHOW SCRIPT END -->
+</body>
+</html>
+

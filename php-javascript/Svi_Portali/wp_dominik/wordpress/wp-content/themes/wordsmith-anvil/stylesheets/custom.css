@@ -1,0 +1,10 @@
+@media screen {
+
+p:first-letter { font-size: 100%; color:inherit;}
+
+}/* END screen media */
+
+
+@media print {
+	
+} /* END print media */

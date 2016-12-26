@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="HitoviModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Playlista">
+          <Key>
+            <PropertyRef Name="Idplaylista" />
+          </Key>
+          <Property Name="Idplaylista" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Prijenosica">
+          <Key>
+            <PropertyRef Name="PrijenosnicaId" />
+          </Key>
+          <Property Name="PrijenosnicaId" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Idplaylista" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TablicaHitova">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Ime" Type="nvarchar" MaxLength="50" />
+          <Property Name="Izvodac" Type="nvarchar" MaxLength="50" />
+          <Property Name="url" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__Prijenosi__Idpla__6FE99F9F">
+          <End Role="Playlista" Type="Self.Playlista" Multiplicity="1" />
+          <End Role="Prijenosica" Type="Self.Prijenosica" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Playlista">
+              <PropertyRef Name="Idplaylista" />
+            </Principal>
+            <Dependent Role="Prijenosica">
+              <PropertyRef Name="Idplaylista" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Prijenosica__Id__5BE2A6F2">
+          <End Role="TablicaHitova" Type="Self.TablicaHitova" Multiplicity="1" />
+          <End Role="Prijenosica" Type="Self.Prijenosica" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TablicaHitova">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Prijenosica">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="HitoviModelStoreContainer">
+          <EntitySet Name="Playlista" EntityType="Self.Playlista" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Prijenosica" EntityType="Self.Prijenosica" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TablicaHitova" EntityType="Self.TablicaHitova" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Prijenosi__Idpla__6FE99F9F" Association="Self.FK__Prijenosi__Idpla__6FE99F9F">
+            <End Role="Playlista" EntitySet="Playlista" />
+            <End Role="Prijenosica" EntitySet="Prijenosica" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Prijenosica__Id__5BE2A6F2" Association="Self.FK__Prijenosica__Id__5BE2A6F2">
+            <End Role="TablicaHitova" EntitySet="TablicaHitova" />
+            <End Role="Prijenosica" EntitySet="Prijenosica" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="HitoviModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="TablicaHitova">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Ime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Izvodac" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="url" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Prijenosicas" Relationship="HitoviModel.FK__Prijenosica__Id__5BE2A6F2" FromRole="TablicaHitova" ToRole="Prijenosica" />
+        </EntityType>
+        <EntityContainer Name="HitoviEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TablicaHitovas" EntityType="Self.TablicaHitova" />
+          <EntitySet Name="Playlistas" EntityType="HitoviModel.Playlista" />
+          <EntitySet Name="Prijenosicas" EntityType="HitoviModel.Prijenosica" />
+          <AssociationSet Name="FK__Prijenosi__Idpla__6FE99F9F" Association="HitoviModel.FK__Prijenosi__Idpla__6FE99F9F">
+            <End Role="Playlista" EntitySet="Playlistas" />
+            <End Role="Prijenosica" EntitySet="Prijenosicas" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Prijenosica__Id__5BE2A6F2" Association="HitoviModel.FK__Prijenosica__Id__5BE2A6F2">
+            <End Role="TablicaHitova" EntitySet="TablicaHitovas" />
+            <End Role="Prijenosica" EntitySet="Prijenosicas" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Playlista">
+          <Key>
+            <PropertyRef Name="Idplaylista" />
+          </Key>
+          <Property Name="Idplaylista" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Prijenosicas" Relationship="HitoviModel.FK__Prijenosi__Idpla__6FE99F9F" FromRole="Playlista" ToRole="Prijenosica" />
+        </EntityType>
+        <EntityType Name="Prijenosica">
+          <Key>
+            <PropertyRef Name="PrijenosnicaID" />
+          </Key>
+          <Property Name="PrijenosnicaID" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Idplaylista" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Playlista" Relationship="HitoviModel.FK__Prijenosi__Idpla__6FE99F9F" FromRole="Prijenosica" ToRole="Playlista" />
+          <NavigationProperty Name="TablicaHitova" Relationship="HitoviModel.FK__Prijenosica__Id__5BE2A6F2" FromRole="Prijenosica" ToRole="TablicaHitova" />
+        </EntityType>
+        <Association Name="FK__Prijenosi__Idpla__6FE99F9F">
+          <End Type="HitoviModel.Playlista" Role="Playlista" Multiplicity="1" />
+          <End Type="HitoviModel.Prijenosica" Role="Prijenosica" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Playlista">
+              <PropertyRef Name="Idplaylista" />
+            </Principal>
+            <Dependent Role="Prijenosica">
+              <PropertyRef Name="Idplaylista" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Prijenosica__Id__5BE2A6F2">
+          <End Type="HitoviModel.TablicaHitova" Role="TablicaHitova" Multiplicity="1" />
+          <End Type="HitoviModel.Prijenosica" Role="Prijenosica" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TablicaHitova">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Prijenosica">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="HitoviModelStoreContainer" CdmEntityContainer="HitoviEntities1">
+          <EntitySetMapping Name="TablicaHitovas">
+            <EntityTypeMapping TypeName="HitoviModel.TablicaHitova">
+              <MappingFragment StoreEntitySet="TablicaHitova">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Ime" ColumnName="Ime" />
+                <ScalarProperty Name="Izvodac" ColumnName="Izvodac" />
+                <ScalarProperty Name="url" ColumnName="url" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Playlistas">
+            <EntityTypeMapping TypeName="HitoviModel.Playlista">
+              <MappingFragment StoreEntitySet="Playlista">
+                <ScalarProperty Name="Idplaylista" ColumnName="Idplaylista" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Prijenosicas">
+            <EntityTypeMapping TypeName="HitoviModel.Prijenosica">
+              <MappingFragment StoreEntitySet="Prijenosica">
+                <ScalarProperty Name="Idplaylista" ColumnName="Idplaylista" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="PrijenosnicaID" ColumnName="PrijenosnicaId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

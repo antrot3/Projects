@@ -1,0 +1,28 @@
+﻿<div class="row">
+    <div class="col-xs-4">
+        <img class="avatar" ng-src="{{profileViewModel.ImageUrl}}"/>
+    </div>
+
+    <div class="col-xs-8">
+        <label>First Name:</label>
+        <input type="text" ng-model="profileViewModel.FirstName" name="form-firstname" placeholder="First Name..." class="form-firstname form-control" id="form-firstname">
+        <label>Last Name:</label>
+        <input type="text" ng-model="profileViewModel.LastName" name="form-lastname" placeholder="Last Name..." class="form-lastname form-control" id="form-lastname">
+        <label>User Name:</label>
+        <input type="text" ng-model="profileViewModel.Username" name="form-username" placeholder="User Name..." class="form-username form-control" id="form-username">
+        <label>Birthday:</label>
+        <input ng-model="profileViewModel.BirthDate" name="form-birthday" placeholder="Birthday..." class="form-birthday form-control" id="form-birthday">
+        <label>ProfileTypeId</label>
+        <input type="text" ng-value="profileViewModel.ProfileTypeId"/>
+        <label>ProfileType</label>
+        <input type="text" ng-value="profileViewModel.ProfileType"/>
+        <label>Rating:</label>
+        <input type="text" ng-value="profileViewModel.Rating"/>
+
+        <button type="button" ng-click="updateProfile()">Update</button>
+
+        <br/>
+        <p ng-model="updateProfileMessage"></p>
+    </div>
+
+</div>

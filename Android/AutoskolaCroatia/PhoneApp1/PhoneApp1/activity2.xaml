@@ -1,0 +1,72 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="PhoneApp1.activity2"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot">
+        <Grid.Background>
+            <ImageBrush Stretch="Fill" ImageSource="/Resources/test.jpg"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Image>
+
+
+        </Image>
+
+
+        <!--ContentPanel - place additional content here-->
+        <TextBlock HorizontalAlignment="Left" Margin="10,719,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Copyright Ante Rota i Antonio Bačić" VerticalAlignment="Top" Width="470" Height="46"/>
+        <TextBlock HorizontalAlignment="Left" Margin="29,10,0,0" TextWrapping="Wrap" Text="Ispiti (1-30):" VerticalAlignment="Top"/>
+        <Button Content="Ispit1"  HorizontalAlignment="Left" Margin="10,42,0,0" VerticalAlignment="Top" Width="120" FontSize="16" Click="Button_Click"/>
+        <Button Content="Ispit2"  HorizontalAlignment="Left" Margin="210,42,0,0" VerticalAlignment="Top" Width="120" FontSize="16"/>
+        <Button Content="Ispit3"  HorizontalAlignment="Left" Margin="110,42,0,0" VerticalAlignment="Top" Width="120" FontSize="16"/>
+        <Button Content="Ispit4"  HorizontalAlignment="Left" Margin="310,42,0,0" VerticalAlignment="Top" Width="120" FontSize="16"/>
+        <Button Content="Ispit5"  HorizontalAlignment="Left" Margin="10,90,0,0" VerticalAlignment="Top" Width="120" FontSize="16" Grid.RowSpan="2"/>
+        <Button Content="Ispit6"  HorizontalAlignment="Left" Margin="110,90,0,0" VerticalAlignment="Top" Width="120" FontSize="16" Grid.RowSpan="2"/>
+        <Button Content="Ispit30"  HorizontalAlignment="Left" Margin="110,260,0,0" VerticalAlignment="Top" Width="120" FontSize="16" Grid.Row="1"/>
+        <Button Content="Ispit29"  HorizontalAlignment="Left" Margin="10,260,0,0" VerticalAlignment="Top" Width="120" FontSize="16" Grid.Row="1"/>
+        <Button Content="Ispit28"  HorizontalAlignment="Left" Margin="310,217,0,0" VerticalAlignment="Top" Width="120" FontSize="16" Grid.Row="1"/>
+        <Button Content="Ispit27"  HorizontalAlignment="Left" Margin="210,217,0,0" VerticalAlignment="Top" Width="120" FontSize="16" Grid.Row="1"/>
+        <Button Content="Ispit26"  HorizontalAlignment="Left" Margin="110,217,0,0" VerticalAlignment="Top" Width="120" FontSize="16" Grid.Row="1"/>
+        <Button Content="Ispit25"  HorizontalAlignment="Left" Margin="10,217,0,0" VerticalAlignment="Top" Width="120" FontSize="16" Grid.Row="1"/>
+        <Button Content="Ispit24"  HorizontalAlignment="Left" Margin="310,175,0,0" VerticalAlignment="Top" Width="120" FontSize="16" Grid.Row="1"/>
+        <Button Content="Ispit23"  HorizontalAlignment="Left" Margin="210,175,0,0" VerticalAlignment="Top" Width="120" FontSize="16" Grid.Row="1"/>
+        <Button Content="Ispit22"  HorizontalAlignment="Left" Margin="110,175,0,0" VerticalAlignment="Top" Width="120" FontSize="16" Grid.Row="1"/>
+        <Button Content="Ispit21"  HorizontalAlignment="Left" Margin="10,175,0,0" VerticalAlignment="Top" Width="120" FontSize="16" Grid.Row="1"/>
+        <Button Content="Ispit20"  HorizontalAlignment="Left" Margin="310,130,0,0" VerticalAlignment="Top" Width="120" FontSize="16" Grid.Row="1"/>
+        <Button Content="Ispit19"  HorizontalAlignment="Left" Margin="210,130,0,0" VerticalAlignment="Top" Width="120" FontSize="16" Grid.Row="1"/>
+        <Button Content="Ispit18"  HorizontalAlignment="Left" Margin="110,130,0,0" VerticalAlignment="Top" Width="120" FontSize="16" Grid.Row="1"/>
+        <Button Content="Ispit17"  HorizontalAlignment="Left" Margin="10,130,0,0" VerticalAlignment="Top" Width="120" FontSize="16" Grid.Row="1"/>
+        <Button Content="Ispit16"  HorizontalAlignment="Left" Margin="310,80,0,0" VerticalAlignment="Top" Width="120" FontSize="16" Grid.Row="1"/>
+        <Button Content="Ispit15"  HorizontalAlignment="Left" Margin="210,80,0,0" VerticalAlignment="Top" Width="120" FontSize="16" Grid.Row="1"/>
+        <Button Content="Ispit14"  HorizontalAlignment="Left" Margin="110,80,0,0" VerticalAlignment="Top" Width="120" FontSize="16" Grid.Row="1"/>
+        <Button Content="Ispit13"  HorizontalAlignment="Left" Margin="10,80,0,0" VerticalAlignment="Top" Width="120" FontSize="16" Grid.Row="1"/>
+        <Button Content="Ispit12"  HorizontalAlignment="Left" Margin="310,32,0,0" VerticalAlignment="Top" Width="120" FontSize="16" Grid.Row="1"/>
+        <Button Content="Ispit11"  HorizontalAlignment="Left" Margin="210,32,0,0" VerticalAlignment="Top" Width="120" FontSize="16" Grid.Row="1"/>
+        <Button Content="Ispit10"  HorizontalAlignment="Left" Margin="110,32,0,0" VerticalAlignment="Top" Width="120" FontSize="16" Grid.Row="1"/>
+        <Button Content="Ispit9"  HorizontalAlignment="Left" Margin="10,32,0,0" VerticalAlignment="Top" Width="120" FontSize="16" Grid.Row="1"/>
+
+        <Button Content="Ispit8"  HorizontalAlignment="Left" Margin="310,90,0,0" VerticalAlignment="Top" Width="120" FontSize="16" Grid.RowSpan="2"/>
+        <Button Content="Ispit7"  HorizontalAlignment="Left" Margin="210,90,0,0" VerticalAlignment="Top" Width="120" FontSize="16" Grid.RowSpan="2"/>
+        <TextBlock HorizontalAlignment="Left" Margin="29,626,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Copyright Ante Rota i Antonio Bacic" VerticalAlignment="Top"/>
+
+
+
+    </Grid>
+
+</phone:PhoneApplicationPage>

@@ -1,0 +1,14 @@
+#!/usr/bin/env mkb
+files
+{
+    autoskola5.cpp
+}
+
+subprojects
+{
+    iwutil
+}
+
+deployment
+{
+}

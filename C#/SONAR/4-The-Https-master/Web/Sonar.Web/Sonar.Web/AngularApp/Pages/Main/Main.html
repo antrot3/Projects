@@ -1,0 +1,25 @@
+﻿<div class="row">
+    <div class="col-xs-9" style="height:90%">
+        <google-map events="events"
+                    visibility-options="visibilityOptions"
+                    location="currentlySelectedLocation"
+                    currently-selected-event="currentlySelectedEvent">
+        </google-map>
+    </div>
+
+    <sidebar class="col-xs-3"></sidebar>
+</div>
+
+<modal title="View event" visible="visibilityOptions.isEventDetailsModalVisible">
+    EVENT DETAILS
+    <div class="form-bottom login-form">
+        <event-form model="currentlySelectedEvent"></event-form>
+        <button class="btn" ng-click="updateEvent()">Change</button>
+    </div>
+</modal>
+
+<modal title="Add new event" visible="visibilityOptions.isAddEventModalVisible">
+    ADD NEW EVENT
+    <event-form model="newEvent"></event-form>
+    <button class="btn" ng-click="submitEvent()" ng-disabled="isAddNewEventButtonDisabled()">Add new event</button>
+</modal>

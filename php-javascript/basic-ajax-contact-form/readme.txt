@@ -1,0 +1,1 @@
+Edit config.php and replace 'yourname@yourdomain.com' with the e-mail address used to get the forms' messages

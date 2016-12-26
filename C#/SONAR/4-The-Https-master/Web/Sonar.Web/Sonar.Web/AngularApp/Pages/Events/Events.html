@@ -1,0 +1,25 @@
+﻿<div class="col-xs-8">
+    <div class="row well" ng-repeat="event in events" style="background-color: white;">
+        <span class="col-xs-2">
+            <img src="{{event.ImageUrl}}" />
+            <h3>{{event.EventType}}</h3>
+            <a>
+                <small ng-click="showOnMap(event)"> check on map -> </small>
+            </a>
+        </span>
+        <span class="col-xs-10">
+            <a href="#/event/{{event.Id}}">
+                <h2>{{event.Name}}</h2>
+            </a>
+            <span> {{event.Description}}</span>
+            <br />
+
+            <span>Town: {{event.Town}}</span> <br />
+            <span>Person: {{event.Person}}</span> <br />
+            <span>Contact number: {{event.Contact}}</span><br />
+        </span>
+    </div>
+</div>
+<div class="col-xs-4">
+    <google-map events="eventsDisplayedOnMap" is-events-page="true"></google-map>
+</div>
